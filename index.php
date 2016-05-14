@@ -12,10 +12,19 @@
 ?>
 
     </aside>
-
+    
     <main class="l-main" role="main">
-
+        
         <h2>Pets</h2>
+        <?php 
+            // get the posts
+            $posts = get_posts(); 
+                if($posts){
+                    foreach ($posts as $post){
+                    echo $post->breed;
+                }
+            }  
+        ?>
 
         <ul>
             <li class="h-spacing-base">
