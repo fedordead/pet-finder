@@ -10,11 +10,15 @@
 
         <div class="l-sidebar">
 
-            <h2 class="heading heading--main">Filters</h2>
+            <h2 class="heading heading--main h-spacing-base">Filters</h2>
+
+                <form>
 
 <?php
     include("includes/pet-details-form.php");
 ?>
+
+                </form>
 
         </div>
     </aside>
@@ -33,7 +37,7 @@
                         <p>Photo</p>
                         <p>LOST!</p>
                         <p>Info</p>
-                        <button>I've found this pet!</button>
+                        <a href="/">I've found this pet!</a>
                     </div>
                 </div>
             </li>
@@ -46,7 +50,7 @@
                         <p>Photo</p>
                         <p>FOUND!</p>
                         <p>Info</p>
-                        <button>That's my pet!</button>
+                        <a href="/">That's my pet!</a>
                     </div>
                 </div>
             </li>

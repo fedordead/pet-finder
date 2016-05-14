@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="dist/css/style.css">
 </head>
 <body>
+    <svg class="h-hide" xmlns="http://www.w3.org/2000/svg">
+
+        <symbol id="caret-icon" viewBox="0 0 429 196">
+            <polygon transform="translate(214.366776, 97.851478)
+            rotate(-180.000000) translate(-214.366776, -97.851478)"
+            points="214.366776 2.84217094e-14 428.733552 195.702957
+            1.64887724e-14 195.702957"></polygon>
+        </symbol>
+    </svg>
 
     <header class="l-header" role="banner">
 
