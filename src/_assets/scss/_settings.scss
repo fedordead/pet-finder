@@ -40,6 +40,7 @@
 
 $g-color-blue-500: #19a9e5;
 
+
 /**
  * Brand.
  */
@@ -55,6 +56,13 @@ $g-color-brand: $g-color-blue-500;
 $g-color-text-base: $g-color-brand;
 
 
+/**
+ * Grey.
+ */
+
+$g-color-grey-50: #fafafb;
+
+$g-color-grey-100: #f6f6f8;
 
 
 /**
@@ -113,14 +121,12 @@ $g-color-slate-800: #303f46;
  * Base (Local).
  */
 
- $shell-base-apply-bottom-margin-to-paragraphs: true;
-
-
 // Links
 
 
 
 /**
- * Container (Local).
+ * Cosmetics (Global).
  */
 
+$g-border-radius: 3px;

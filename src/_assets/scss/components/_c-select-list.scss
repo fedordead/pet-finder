@@ -1,0 +1,64 @@
+/* ============================================================================
+   COMPONENTS -> FORM SELECT
+   ========================================================================= */
+
+/**
+ * The container `<span>` element which we apply the visual `<select>` element
+ * styles too.
+ */
+
+.c-form-select {
+    background-color: $shell-g-color-white;
+    border: 1px solid $g-color-slate-400;
+    border-radius: $g-border-radius;
+    display: block;
+    // So we can position the SVG icon
+    position: relative;
+}
+
+
+/**
+ * The `<select>` element.
+ *
+ * 1.   Remove the visual user-agent styles.
+ * 2.   Reinstate the correct `cursor` as we killed it in [1].
+ * 3.   We always want it to be the full width of its parent `<span>` element.
+ * 4.   The only visual styles we apply, the rest go on the parent `<span>`
+ *      element.
+ * 4a.  Needs to be bigger to make room for the SVG icon.
+ */
+
+.c-form-select__select {
+    appearance: none; // [1]
+    background: none; // [1]
+    border: 0; // [1]
+    cursor: pointer; // [2]
+    display: block; // [3]
+    font-size: rem($shell-g-font-size-large); // [4]
+    padding-bottom: rem($shell-g-spacing-x-small); // [4]
+    padding-left: rem($shell-g-spacing-base); // [4]
+    padding-right: rem($shell-g-spacing-x-large); // [4a]
+    padding-top: rem($shell-g-spacing-x-small); // [4]
+    width: 100%; // [3]
+}
+
+// Hide the arrow in IE 10
+.c-form-select__select::-ms-expand {
+    display: none;
+}
+
+
+/**
+ * The SVG icon, currently a caret.
+ */
+
+.c-form-select__icon {
+    fill: $shell-g-color-black;
+    height: rem(7);
+    pointer-events: none;
+    position: absolute;
+    right: rem($shell-g-spacing-base);
+    top: 50%;
+    transform: translateY(-50%);
+    width: rem(16);
+}

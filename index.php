@@ -3,18 +3,28 @@
     include("includes/header.php");
 ?>
 
-    <aside class="l-sidebar">
+<div class="l-side-by-side">
 
-        <h2>Filters</h2>
+
+    <aside class="l-side-by-side__item">
+
+        <div class="l-sidebar">
+
+            <h2 class="heading heading--main h-spacing-base">Filters</h2>
+
+                <form>
 
 <?php
     include("includes/pet-details-form.php");
 ?>
 
+                </form>
+
+        </div>
     </aside>
-    
-    <main class="l-main" role="main">
-        
+
+    <main class="l-side-by-side__item" role="main">
+
         <h2>Pets</h2>
         <?php 
             // get the posts
@@ -36,7 +46,7 @@
                         <p>Photo</p>
                         <p>LOST!</p>
                         <p>Info</p>
-                        <button>I've found this pet!</button>
+                        <a href="/">I've found this pet!</a>
                     </div>
                 </div>
             </li>
@@ -49,14 +59,14 @@
                         <p>Photo</p>
                         <p>FOUND!</p>
                         <p>Info</p>
-                        <button>That's my pet!</button>
+                        <a href="/">That's my pet!</a>
                     </div>
                 </div>
             </li>
         </ul>
 
     </main>
-
+</div>
 <?php
     include("includes/footer.php");
 ?>
