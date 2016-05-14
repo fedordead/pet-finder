@@ -1,0 +1,56 @@
+/* ============================================================================
+   COMPONENTS -> NAVIGATION
+   ========================================================================= */
+
+/**
+ * Settings.
+ */
+
+$c-nav-link-current-underline-color: $g-color-brand;
+
+
+/**
+ * Base.
+ */
+
+.c-nav {
+    display: flex;
+}
+
+
+/**
+ * Links.
+ */
+
+.c-nav__link {
+    color: $shell-g-color-white;
+    display: block;
+    padding: rem($shell-g-spacing-base) rem($shell-g-spacing-large);
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+}
+
+/**
+ * Hover.
+ */
+
+.c-nav__link:hover {
+    background-color: $g-color-slate-800;
+}
+
+
+/**
+ * State: active state.
+ */
+
+.is-current .c-nav__link::after {
+    background-color: $c-nav-link-current-underline-color;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: rem(3);
+    left: 0;
+    position: absolute;
+    width: 100%;
+}

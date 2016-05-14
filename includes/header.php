@@ -10,27 +10,39 @@
 
     <header class="l-header" role="banner">
 
-        <h1>
-            <a href="/" rel="home">Pet Detectr</a>
-        </h1>
+        <div class="l-grid l-grid--space-between l-grid--align-middle">
 
-        <p>Report lost or found pets</p>
+            <div class="l-grid__item">
 
-        <nav>
-            <ul>
-                <li <?php if ($page=='search')
-      echo 'class="is-current"'; ?>>
-                    <a href="/">Search Database</a>
-                </li>
-                <li <?php if ($page=='lost')
-      echo 'class="is-current"'; ?>>
-                    <a href="/lost.php">Report Lost</a>
-                </li>
-                <li <?php if ($page=='found')
-      echo 'class="is-current"'; ?>>
-                    <a href="/found.php">Report Found</a>
-                </li>
-            </ul>
-        </nav>
+                <h1>
+                    <a class="c-logo" href="/" rel="home">Pet Detectr</a>
+                </h1>
+
+            </div>
+
+            <div class="l-grid__item">
+
+                <nav role="navigation">
+                    <ul class="c-nav">
+                        <li class="c-nav__item <?php if ($page=='search')
+              echo 'is-current'; ?>">
+                            <a class="c-nav__link" href="/">Search Database</a>
+                        </li>
+                        <li class="c-nav__item <?php if ($page=='lost')
+              echo 'is-current'; ?>">
+                            <a class="c-nav__link" href="/lost.php">Report Lost</a>
+                        </li>
+                        <li class="c-nav__item <?php if ($page=='found')
+              echo 'is-current'; ?>">
+                            <a class="c-nav__link" href="/found.php">Report Found</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+            <!-- .l-grid__item -->
+
+        </div>
+        <!-- .l-grid -->
 
     </header>
