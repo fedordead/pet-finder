@@ -1,0 +1,15 @@
+/* ============================================================================
+   LAYOUT -> TEMPLATE -> HEADER
+   ========================================================================= */
+
+/**
+ * The site header
+ */
+
+
+.l-header {
+    background-color: $g-color-slate-dark;
+    padding: rem($shell-g-spacing-large);
+}
+
+

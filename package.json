@@ -1,0 +1,24 @@
+{
+  "name": "pet-detectr",
+  "description": "Web App for reporting lost / found pets",
+  "version": "1.0.0",
+  "scripts": {
+    "compile-scss": "node-sass --output-style compressed -o dist/css src/_assets/scss/style.scss",
+    "autoprefixer": "postcss -u autoprefixer -r dist/css/*",
+    "watch": "onchange 'src/_assets/scss/**.scss' -- npm run build",
+    "build": "npm run compile-scss && npm run autoprefixer",
+    "start": "npm run build && parallelshell 'npm run watch'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:pet-detectr/pet-detectr.com.git"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "node-sass": "^3.4.2",
+    "onchange": "^2.2.0",
+    "parallelshell": "^2.0.0",
+    "postcss-cli": "^2.5.1",
+    "shell-csslib": "^0.10.0"
+  }
+}
