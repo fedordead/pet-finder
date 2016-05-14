@@ -10,4 +10,7 @@ Web app for reporting lost or found pets.
 
 3. `npm start`
 
-4. open `index.html` in browser
+4. Have apache server running (MAMP)
+
+5. open `index.php` in browser
+
