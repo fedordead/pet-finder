@@ -17,10 +17,13 @@
         
         <h2>Pets</h2>
         <?php 
-
+            // get the posts
             $posts = get_posts(); 
-            var_dump($posts);
-
+                if($posts){
+                    foreach ($posts as $post){
+                    echo $post->breed;
+                }
+            }  
         ?>
 
         <ul>
