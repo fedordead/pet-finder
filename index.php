@@ -3,17 +3,23 @@
     include("includes/header.php");
 ?>
 
-    <aside class="l-sidebar">
+<div class="l-side-by-side">
 
-        <h2>Filters</h2>
+
+    <aside class="l-side-by-side__item">
+
+        <div class="l-sidebar">
+
+            <h2 class="heading heading--main">Filters</h2>
 
 <?php
     include("includes/pet-details-form.php");
 ?>
 
+        </div>
     </aside>
 
-    <main class="l-main" role="main">
+    <main class="l-side-by-side__item" role="main">
 
         <h2>Pets</h2>
 
@@ -47,7 +53,7 @@
         </ul>
 
     </main>
-
+</div>
 <?php
     include("includes/footer.php");
 ?>

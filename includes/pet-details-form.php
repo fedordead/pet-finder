@@ -33,7 +33,7 @@
 </p>
 
 <p class="c-select-list">
-    <label for="breed">Breed:</label> - dependent on prev select
+    <label for="breed">Breed:</label>
     <select id="breed" name="breed">
 
         <?php if ($page =='search') { ?>
@@ -95,7 +95,7 @@
 </p>
 
 <p class="c-textual-input">
-    <label for="chip-number">Chip number:</label> only display if chipped is true
+    <label for="chip-number">Chip number:</label>
     <input type="text" id="chip-number" name="chip-number">
 </p>
 
