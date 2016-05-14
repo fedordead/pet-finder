@@ -12,10 +12,16 @@
 ?>
 
     </aside>
-
+    
     <main class="l-main" role="main">
-
+        
         <h2>Pets</h2>
+        <?php 
+
+            $posts = get_posts(); 
+            var_dump($posts);
+
+        ?>
 
         <ul>
             <li class="h-spacing-base">
