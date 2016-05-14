@@ -35,10 +35,16 @@
    ========================================================================= */
 
 /**
+ * Blue.
+ */
+
+$g-color-blue-500: #19a9e5;
+
+/**
  * Brand.
  */
 
-$g-color-brand: #333;
+$g-color-brand: $g-color-blue-500;
 
 
 /**
@@ -55,9 +61,15 @@ $g-color-text-base: $g-color-brand;
  * Slate.
  */
 
-$g-color-slate: #607d8b;
+$g-color-slate-400: #607d8b;
 
-$g-color-slate-dark: #36474f;
+$g-color-slate-400: #607d8b;
+
+$g-color-slate-600: #36474f;
+
+$g-color-slate-700: #333;
+
+$g-color-slate-800: #303f46;
 
 
 
@@ -81,61 +93,34 @@ $g-color-slate-dark: #36474f;
 /* 4. Shell overrides
    ========================================================================= */
 
-/**
- * Baseline number.
- */
 
-// $shell-g-base-number: 20;
 
 
 // /**
 //  * Colours (Global).
 //  */
 
-// $shell-g-color-text-base: $g-color-text-base;
-
-// $shell-g-color-text-heading: $shell-g-color-text-base;
-
-// $shell-g-color-link: $g-color-slate;
-
-// $shell-g-color-link-hover: $g-color-slate-dark;
 
 
 /**
  * Typography (Global).
  */
 
-// $shell-g-font-family-base: $g-font-family-base;
 
-// $shell-g-font-size-heading: $shell-g-base-number * 1.25;
-
-// $shell-g-font-size-heading-large: $shell-g-font-size-heading + 8;
-
-// $shell-g-font-size-heading-huge: $shell-g-font-size-heading + 16;
 
 
 /**
  * Base (Local).
  */
 
-// $shell-base-apply-link-transition: true;
-
  $shell-base-apply-bottom-margin-to-paragraphs: true;
 
-// $shell-base-root-element-background-color: $g-color-gradient;
 
 // Links
-// $shell-base-link-text-decoration: underline;
 
-// $shell-base-link-text-decoration-on-hover: none;
-
-// $shell-base-link-transition-duration: 0.15s;
-
-// $shell-base-link-transition-timing-function: linear;
 
 
 /**
  * Container (Local).
  */
 
-// $shell-container-maximum-width: $shell-g-base-number * 40;

@@ -1,0 +1,18 @@
+/* ============================================================================
+   COMPONENTS -> LOGO
+   ========================================================================= */
+
+/**
+ * Base.
+ */
+
+.c-logo {
+    color: $shell-g-color-white;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.c-logo:hover {
+    color: $shell-g-color-white;
+}

@@ -6,10 +6,17 @@
  * The site header
  */
 
+/**
+ * Grid.
+ */
+
+.l-grid__item {
+    width: auto;
+}
 
 .l-header {
-    background-color: $g-color-slate-dark;
-    padding: rem($shell-g-spacing-large);
+    background-color: $g-color-slate-600;
+    padding: 0 rem($shell-g-spacing-large);
 }
 
 
