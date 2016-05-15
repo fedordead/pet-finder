@@ -52,6 +52,25 @@ function get_posts(){
 }
 
 
+/* ###### Get Single Post ###### */
+
+function get_single_post(){
+	
+	if(isset($_GET['pet'])){
+		$post_id = $_GET['pet'];
+		// Get Firebase JSON of single post
+		$json = file_get_contents(FIREBASE_URL.'/posts/'.$post_id.'.json');
+		// Decode JSON
+		$obj = json_decode($json);
+		// Return data
+		if(!empty($obj)){
+			return $obj;
+		} else {
+			return false;
+		}		
+	}	
+}
+
 
 /* ###### Submit Lost Pet ###### */
 

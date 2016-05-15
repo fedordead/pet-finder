@@ -1,6 +1,8 @@
 <?php
     $page="pet-details";
     include("includes/header.php");
+    $pet = get_single_post();
+    print_r($pet);
 ?>
 
 <main role="main" class="l-container">
