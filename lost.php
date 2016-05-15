@@ -5,9 +5,9 @@
 
 <main class="l-main" role="main">
 
-    <h2>Lost</h2>
+    <h2 class="heading heading--main h-spacing-base">Lost</h2>
 
-    <p>Pet details</p>
+    <p class="h-spacing-small">Add details of your lost pet below:</p>
 
 <?php
     include("includes/pet-details-form.php");
