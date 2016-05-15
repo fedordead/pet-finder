@@ -33,14 +33,14 @@
             // get the posts
             $posts = get_posts();
                 if($posts){
-                    foreach ($posts as $post){
+                    foreach ($posts as $key => $post){
         ?>
             <li class="l-grid__item l-grid__item--4-col">
 
                 <div class="c-card">
 
                     <div class="c-card__header">
-                        <h3 class="heading heading--main">Pet Name</h3>
+                        <h3 class="heading heading--main"><a href="/pet-details.php?pet=<?php echo $key; ?>">Pet Name</a></h3>
                     </div>
 
                     <div class="c-card__body">
