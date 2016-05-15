@@ -9,7 +9,6 @@
 </head>
 <body>
     <svg class="h-hide" xmlns="http://www.w3.org/2000/svg">
-
         <symbol id="caret-icon" viewBox="0 0 429 196">
             <polygon transform="translate(214.366776, 97.851478)
             rotate(-180.000000) translate(-214.366776, -97.851478)"
