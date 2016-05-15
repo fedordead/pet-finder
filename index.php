@@ -39,21 +39,23 @@
             ?>
                 <li class="l-grid__item l-grid__item--4-col">
 
-                    <div class="c-card">
+                    <a class="c-card" href="/pet-details.php?pet=<?php echo substr($key, 1); ?>">
 
                         <div class="c-card__header">
-                            <h3 class="heading heading--main"><a href="/pet-details.php?pet=<?php echo substr($key, 1); ?>">Pet Name</a></h3>
+                            <h3 class="heading heading--main">Pet Name <?php echo $post->name; ?></h3>
                         </div>
 
                         <div class="c-card__body">
                             <ul>
-                                <li>Species: <?php echo $post->breed; ?></li>
+                                <li>Species: <?php echo $post->species; ?></li>
+                                <li>Breed: <?php echo $post->breed; ?></li>
+                                <li>Size: <?php echo $post->size; ?></li>
                                 <li>Colour: <?php echo $post->colour; ?></li>
-                                <li>Other info</li>
+                                <li>Collar: <?php echo $post->collar; ?></li>
+                                <li>Location: <?php echo $post->location; ?></li>
                             </ul>
-                            <a href="/">I've found this pet!</a>
                         </div>
-                    </div>
+                    </a>
                     <!-- .c-card -->
 
                 </li>

@@ -1,36 +1,49 @@
 <?php
     $page="pet-details";
     include("includes/header.php");
-    $pet = get_single_post();
-    print_r($pet);
 ?>
 
-<main role="main" class="l-container">
+<div class="l-container">
 
-    <h2 class="heading heading--main h-spacing-base">{{ Lost }}: {{ Barbara }}</h2>
+    <main role="main" class="l-main">
 
-    <img class="h-spacing-base" src="http://placekitten.com/200/300" alt="Place Kitten" />
+        <h2 class="heading heading--main h-spacing-base">{{ Lost }}: {{ Barbara }}</h2>
 
-    <ul class="h-spacing-base">
-        <li>Species: {{ Cat }}</li>
-        <li>Breed: {{ Siamese }}</li>
-        <li>Size: {{ Medium }}</li>
-        <li>Colour: {{ White }}</li>
-        <li>Chipped: {{ No }}</li>
-        <li>Collar: {{ Blue }}</li>
-        <li>Last seen: {{ 14 May 2016 }}, {{ Dibden Purlieu }} [Map]</li>
-    </ul>
+        <img class="h-spacing-base" src="http://placekitten.com/200/300" alt="Place Kitten" />
 
-    <h3>Please contact:</h3>
+        <ul class="h-spacing-base">
 
-    <address>
-        <p>{{ David Berner }}</p>
-        <p>{{ 07894 535 194 }}</p>
-        <p>{{ davidajberner@gmail.com }}</p>
-    </address>
+                <?php
+                    // get the posts
+                    $pet = get_single_post();
+
+                    if($pet){
+                ?>
+
+                <li>Species: <?php echo $pet->species; ?></li>
+                <li>Breed: <?php echo $pet->breed; ?></li>
+                <li>Size: <?php echo $pet->size; ?></li>
+                <li>Colour: <?php echo $pet->colour; ?></li>
+                <li>Collar: <?php echo $pet->collar; ?></li>
+                <li>Chipped: <?php echo $pet->chipped; ?></li>
+                <li>Last seen: <?php echo $pet->location; ?>, <?php echo $pet->time; ?></li>
+
+                <?php } ?>
+
+            </ul>
+
+        <h3>Please contact:</h3>
+
+        <address>
+            <p>{{ David Berner }}</p>
+            <p>{{ 07894 535 194 }}</p>
+            <p>{{ davidajberner@gmail.com }}</p>
+        </address>
 
 
-</main>
+    </main>
+
+</div>
 
 <?php
     include("includes/footer.php");

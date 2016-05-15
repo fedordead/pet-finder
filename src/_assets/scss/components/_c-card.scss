@@ -11,13 +11,22 @@ $c-card-background-color: $g-color-grey-100;
 
 /**
 * Base.
+* 1. Allow links to be cards
 */
 
 .c-card {
     background: $c-card-background-color;
     border-radius: $g-border-radius;
     box-shadow: 0 3px 0 rgba($g-color-slate-400, 0.3);
+    color: $g-color-text-base;
+    display: block;
     position: relative;
+    text-decoration: none; // [1]
+
+    &:hover {
+        box-shadow: 0 3px 0 rgba($g-color-brand, 0.3);
+        color: $g-color-text-base;
+    }
 }
 
 .c-card__header {
