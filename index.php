@@ -3,7 +3,7 @@
     include("includes/header.php");
 ?>
 
-<div class="l-side-by-side">
+<div class="l-side-by-side l-side-by-side--gutterless">
 
 
     <aside class="l-side-by-side__item">
@@ -23,46 +23,53 @@
         </div>
     </aside>
 
-    <main class="l-side-by-side__item" role="main">
+    <div class="l-side-by-side__item">
 
-        <h2 class="heading heading--main h-spacing-base">Pets</h2>
+        <main class="l-main" role="main">
 
-        <ul class="l-grid">
+            <h2 class="heading heading--main h-spacing-base">Pets</h2>
 
-        <?php
-            // get the posts
-            $posts = get_posts();
-                if($posts){
-                    foreach ($posts as $key => $post){
-        ?>
-            <li class="l-grid__item l-grid__item--4-col">
+            <ul class="l-grid">
 
-                <div class="c-card">
+            <?php
+                // get the posts
+                $posts = get_posts();
+                    if($posts){
+                        foreach ($posts as $key => $post){
+            ?>
+                <li class="l-grid__item l-grid__item--4-col">
 
-                    <div class="c-card__header">
-                        <h3 class="heading heading--main"><a href="/pet-details.php?pet=<?php echo substr($key, 1); ?>">Pet Name</a></h3>
+                    <div class="c-card">
+
+                        <div class="c-card__header">
+                            <h3 class="heading heading--main"><a href="/pet-details.php?pet=<?php echo substr($key, 1); ?>">Pet Name</a></h3>
+                        </div>
+
+                        <div class="c-card__body">
+                            <ul>
+                                <li>Species: <?php echo $post->breed; ?></li>
+                                <li>Colour: <?php echo $post->colour; ?></li>
+                                <li>Other info</li>
+                            </ul>
+                            <a href="/">I've found this pet!</a>
+                        </div>
                     </div>
+                    <!-- .c-card -->
 
-                    <div class="c-card__body">
-                        <ul>
-                            <li>Species: <?php echo $post->breed; ?></li>
-                            <li>Colour: <?php echo $post->colour; ?></li>
-                            <li>Other info</li>
-                        </ul>
-                        <a href="/">I've found this pet!</a>
-                    </div>
-                </div>
-                <!-- .c-card -->
+                </li>
 
-            </li>
+            <?php   }
+                }
+            ?>
+            </ul>
 
-        <?php   }
-            }
-        ?>
-        </ul>
+        </main>
 
-    </main>
+    </div>
+    <!-- .l-side-by-side__item -->
 </div>
+<!-- .l-side-by-side -->
+
 <?php
     include("includes/footer.php");
 ?>
