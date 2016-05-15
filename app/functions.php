@@ -62,7 +62,7 @@ function submit_lost(){
 	$post_params['status'] = 'lost';
 
 	// CURL stuff
-	$url = FIREBASE_URL.'/posts/'.$_SERVER['REQUEST_TIME'].'.json';    
+	$url = FIREBASE_URL.'/posts/p'.$_SERVER['REQUEST_TIME'].'.json';    
 	$data = json_encode($post_params);
     $ch = curl_init($url);
 
