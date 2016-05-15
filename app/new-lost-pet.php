@@ -1,1 +1,3 @@
-<?php require 'functions.php'; ?>
+<?php require 'functions.php'; 
+	submit_lost();
+?>

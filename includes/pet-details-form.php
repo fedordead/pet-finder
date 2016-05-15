@@ -1,3 +1,4 @@
+<form action="app/new-lost-pet.php" method="POST">
 <p class="h-spacing-tiny">Status:</p>
 
 <div class="c-radio-switch-container h-spacing-base">
@@ -169,3 +170,5 @@
         </svg>
     </span>
 </p>
+<button>Submit</button>
+</form>

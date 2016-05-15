@@ -47,28 +47,37 @@ function get_posts(){
 	
 
 	// Return filtered posts
-	return $the_posts;
+	return array_reverse($the_posts);
 
 }
 
 
 
-
-
 /* ###### Submit Lost Pet ###### */
 
-	/* Fields
-	- Type
-	- Breed
-	- Size
-	- Colour
-	- Chipped?
-	- Collar? (colour)
-	- Picture(s)
-	- Location - Post Code/Geo Location
-	- Last Seen Date
-	- Any Other Notes
-	*/
+function submit_lost(){
+	header('Location:http://localhost/');
+	$post_params = $_POST;
+	$post_params['time'] = $_SERVER['REQUEST_TIME'];
+	$post_params['status'] = 'lost';
+
+	// CURL stuff
+	$url = FIREBASE_URL.'/posts/'.$_SERVER['REQUEST_TIME'].'.json';    
+	$data = json_encode($post_params);
+    $ch = curl_init($url);
+
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+    curl_setopt($ch, CURLOPT_POSTFIELDS,$data);
+
+    $response = curl_exec($ch);
+    
+    if(!$response) {
+        
+        print_r('No response from server');
+        return false;
+    }
+}
 
 	// Cross Reference with Found Pets? Think the 'does this answer your question' feature on Stack Overflow
 
