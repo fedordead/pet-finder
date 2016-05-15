@@ -1,0 +1,23 @@
+/* ============================================================================
+   COMPONENTS -> TEXTUAL INPUT
+   ========================================================================= */
+
+/**
+ * Base
+ */
+
+.c-textual-input {
+    appearance: none;
+    background-color: $shell-g-color-white;
+    border: 1px solid $g-color-slate-400;
+    border-radius: $g-border-radius;
+    display: block;
+    font-size: rem($shell-g-font-size-large);
+    padding: rem($shell-g-spacing-x-small) rem($shell-g-spacing-base); // [4]
+    width: 100%;
+}
+
+
+
+
+

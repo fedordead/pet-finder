@@ -123,7 +123,7 @@
 
 <p class="h-spacing-base">
     <label for="chip-number">Chip number:</label>
-    <input type="text" id="chip-number" name="chip-number">
+    <input type="text" id="chip-number" name="chip-number" class="c-textual-input">
 </p>
 
 <p class="h-spacing-base">
@@ -147,7 +147,7 @@
 
 <p class="h-spacing-base">
     <label for="date">Date last seen:</label>
-    <input type="date" id="date" name="date">
+    <input type="date" id="date" class="c-textual-input" name="date">
 </p>
 
 <p>
