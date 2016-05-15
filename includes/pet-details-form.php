@@ -1,25 +1,26 @@
 <p class="h-spacing-tiny">Status:</p>
 
-<div class="h-spacing-base">
+<div class="c-radio-switch-container h-spacing-base">
 
 <?php if ($page =='search') { ?>
 
-    <p class="h-spacing-tiny">
-        <input id="lost-found" type="radio" value="all" name="status" checked>
-        <label for="lost-found">Lost &amp; Found</label>
+    <p class="c-radio-switch">
+        <input id="lost-found" type="radio" value="all" name="status" class="c-radio-switch__input" checked>
+        <label for="lost-found" class="c-radio-switch__label">All</label>
     </p>
 
 <?php } ?>
 
-    <p class="h-spacing-tiny">
-        <input id="lost" type="radio" value="lost" name="status">
-        <label for="lost">Lost</label>
+    <p class="c-radio-switch">
+        <input id="lost" type="radio" value="lost" name="status" class="c-radio-switch__input">
+        <label for="lost" class="c-radio-switch__label">Lost</label>
     </p>
 
-    <p class="h-spacing-tiny">
-        <input id="found" type="radio" value="found" name="status">
-        <label for="found">Found</label>
+    <p class="c-radio-switch">
+        <input id="found" type="radio" value="found" name="status" class="c-radio-switch__input">
+        <label for="found" class="c-radio-switch__label">Found</label>
     </p>
+
 </div>
 
 <p class="h-spacing-base">
@@ -89,25 +90,25 @@
 
 <p class="h-spacing-tiny">Chipped:</p>
 
-<div class="h-spacing-base">
+<div class="c-radio-switch-container h-spacing-base">
 
 <?php if ($page =='search') { ?>
 
-    <p class="h-spacing-tiny">
-        <input id="both-chipped" type="radio" value="true" name="is-chipped" checked>
-        <label for="both-chipped">Show all</label>
+    <p class="c-radio-switch">
+        <input id="both-chipped" type="radio" value="all" name="is-chipped" class="c-radio-switch__input" checked>
+        <label for="both-chipped" class="c-radio-switch__label">All</label>
     </p>
 
 <?php } ?>
 
-    <p class="h-spacing-tiny">
-        <input id="chipped" type="radio" value="true" name="is-chipped">
-        <label for="chipped">Yes</label>
+    <p class="c-radio-switch">
+        <input id="chipped" type="radio" value="all" name="is-chipped" class="c-radio-switch__input">
+        <label for="chipped" class="c-radio-switch__label">Yes</label>
     </p>
 
-    <p class="h-spacing-tiny">
-        <input id="not-chipped" type="radio" value="false" name="is-chipped">
-        <label for="not-chipped">No</label>
+    <p class="c-radio-switch">
+        <input id="not-chipped" type="radio" value="all" name="is-chipped" class="c-radio-switch__input">
+        <label for="not-chipped" class="c-radio-switch__label">No</label>
     </p>
 </div>
 
