@@ -64,19 +64,18 @@ function submit_lost(){
 	// CURL stuff
 	$url = FIREBASE_URL.'/posts/p'.$_SERVER['REQUEST_TIME'].'.json';    
 	$data = json_encode($post_params);
-    $ch = curl_init($url);
+	$ch = curl_init($url);
 
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
-    curl_setopt($ch, CURLOPT_POSTFIELDS,$data);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+	curl_setopt($ch, CURLOPT_POSTFIELDS,$data);
 
-    $response = curl_exec($ch);
-    
-    if(!$response) {
-        
-        print_r('No response from server');
-        return false;
-    }
+	$response = curl_exec($ch);
+
+	if(!$response) {
+		print_r('No response from server');
+		return false;
+	}
 }
 
 	// Cross Reference with Found Pets? Think the 'does this answer your question' feature on Stack Overflow
