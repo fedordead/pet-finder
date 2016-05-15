@@ -47,7 +47,7 @@ function get_posts(){
 	
 
 	// Return filtered posts
-	return $the_posts;
+	return array_reverse($the_posts);
 
 }
 
