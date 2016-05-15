@@ -25,44 +25,40 @@
 
     <main class="l-side-by-side__item" role="main">
 
-        <h2>Pets</h2>
-        <?php 
+        <h2 class="heading heading--main h-spacing-base">Pets</h2>
+
+        <ul class="l-grid">
+
+        <?php
             // get the posts
-            $posts = get_posts(); 
+            $posts = get_posts();
                 if($posts){
                     foreach ($posts as $post){
-                    echo $post->breed;
-                }
-            }  
         ?>
+            <li class="l-grid__item l-grid__item--4-col">
 
-        <ul>
-            <li class="h-spacing-base">
                 <div class="c-card">
+
                     <div class="c-card__header">
-                        <h3>Tom the Cat</h3>
+                        <h3 class="heading heading--main">Pet Name</h3>
                     </div>
+
                     <div class="c-card__body">
-                        <p>Photo</p>
-                        <p>LOST!</p>
-                        <p>Info</p>
+                        <ul>
+                            <li>Species: <?php echo $post->breed; ?></li>
+                            <li>Colour: <?php echo $post->colour; ?></li>
+                            <li>Other info</li>
+                        </ul>
                         <a href="/">I've found this pet!</a>
                     </div>
                 </div>
+                <!-- .c-card -->
+
             </li>
-            <li class="h-spacing-base">
-                <div class="c-card">
-                    <div class="c-card__header">
-                        <h3>Jerry the Mouse</h3>
-                    </div>
-                    <div class="c-card__body">
-                        <p>Photo</p>
-                        <p>FOUND!</p>
-                        <p>Info</p>
-                        <a href="/">That's my pet!</a>
-                    </div>
-                </div>
-            </li>
+
+        <?php   }
+            }
+        ?>
         </ul>
 
     </main>

@@ -1,0 +1,71 @@
+/* ============================================================================
+   COMPONENTS -> FORM SELECT
+   ========================================================================= */
+
+/**
+ * Base
+ */
+
+.c-radio-switch-container {
+    display: flex;
+}
+
+
+/**
+ * Hidden radio input
+ */
+
+.c-radio-switch__input {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px; margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+
+/**
+ * Faux button style
+ */
+
+.c-radio-switch__label {
+  background-color: rgba($shell-g-color-black, 0.3);
+  border-left: 1px solid rgba($shell-g-color-black, 0.2);
+  color: $shell-g-color-white;
+  cursor: pointer;
+  display: block;
+  padding: rem($shell-g-spacing-x-small) rem($shell-g-spacing-base);
+}
+
+
+/**
+ * Rounded ends.
+ */
+
+.c-radio-switch:first-child .c-radio-switch__label {
+    border-radius: 10px 0 0 10px;
+}
+
+.c-radio-switch:last-child .c-radio-switch__label {
+    border-radius: 0 10px 10px 0;
+}
+
+
+/**
+ * State: checked.
+ */
+
+.c-radio-switch__input:checked + .c-radio-switch__label {
+  background-color: $g-color-brand;
+}
+
+
+/**
+ * State: focus
+ */
+
+.c-radio-switch__input:focus + .c-radio-switch__label {
+  outline: 1px solid;
+}

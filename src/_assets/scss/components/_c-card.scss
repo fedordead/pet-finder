@@ -3,13 +3,33 @@
    ========================================================================= */
 
 /**
- * Main card or panel component
- */
+* Base
+*/
 
+$c-card-background-color: $g-color-grey-100;
+
+
+/**
+* Base.
+*/
 
 .c-card {
-    border: 1px solid;
-    padding: rem($shell-g-spacing-large);
+    background: $c-card-background-color;
+    border-radius: $g-border-radius;
+    box-shadow: 0 3px 0 rgba($g-color-slate-400, 0.3);
+    position: relative;
 }
+
+.c-card__header {
+    border-bottom: 1px solid rgba($g-color-slate-400, 0.3);
+    padding: rem($shell-g-spacing-small);
+}
+
+.c-card__body {
+    padding: rem($shell-g-spacing-small);
+}
+
+
+
 
 
