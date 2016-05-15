@@ -36,7 +36,7 @@
             <option value="dog">Dog</option>
         </select>
         <svg class="c-form-select__icon">
-            <use xlinkHref="#caret-icon" />
+            <use xlink:href="#caret-icon" />
         </svg>
     </span>
 </p>
@@ -53,6 +53,9 @@
             <option value="alsation">Alsation</option>
             <option value="yorkshire-terrier">Yorkshire Terrier</option>
         </select>
+        <svg class="c-form-select__icon">
+            <use xlink:href="#caret-icon" />
+        </svg>
     </span>
 </p>
 
@@ -69,6 +72,9 @@
             <option value="medium">Medium</option>
             <option value="large">Large</option>
         </select>
+        <svg class="c-form-select__icon">
+            <use xlink:href="#caret-icon" />
+        </svg>
     </span>
 </p>
 
@@ -85,6 +91,9 @@
             <option value="ginger">Ginger</option>
             <option value="grey">Grey</option>
         </select>
+        <svg class="c-form-select__icon">
+            <use xlink:href="#caret-icon" />
+        </svg>
     </span>
 </p>
 
@@ -130,6 +139,9 @@
             <option value="green">Green</option>
             <option value="yellow">Yellow</option>
         </select>
+        <svg class="c-form-select__icon">
+            <use xlink:href="#caret-icon" />
+        </svg>
     </span>
 </p>
 
@@ -152,5 +164,8 @@
             <option value="staines">Westside Staines Massive</option>
             <option value="oz">Australia</option>
         </select>
+        <svg class="c-form-select__icon">
+            <use xlink:href="#caret-icon" />
+        </svg>
     </span>
 </p>
