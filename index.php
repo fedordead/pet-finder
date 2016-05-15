@@ -40,7 +40,7 @@
                 <div class="c-card">
 
                     <div class="c-card__header">
-                        <h3 class="heading heading--main"><a href="/pet-details.php?pet=<?php echo $key; ?>">Pet Name</a></h3>
+                        <h3 class="heading heading--main"><a href="/pet-details.php?pet=<?php echo substr($key, 1); ?>">Pet Name</a></h3>
                     </div>
 
                     <div class="c-card__body">

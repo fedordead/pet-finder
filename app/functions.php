@@ -59,7 +59,7 @@ function get_single_post(){
 	if(isset($_GET['pet'])){
 		$post_id = $_GET['pet'];
 		// Get Firebase JSON of single post
-		$json = file_get_contents(FIREBASE_URL.'/posts/'.$post_id.'.json');
+		$json = file_get_contents(FIREBASE_URL.'/posts/p'.$post_id.'.json');
 		// Decode JSON
 		$obj = json_decode($json);
 		// Return data
