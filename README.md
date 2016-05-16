@@ -14,3 +14,12 @@ Web app for reporting lost or found pets.
 
 5. open `index.php` in browser
 
+## Text editor instructions
+
+If you're using Sublime Text please install the following plugins via Package Control:
+
+* SublimeLinter
+* [SublimeLinter-contrib-eslint](https://github.com/roadhump/SublimeLinter-eslint) - requires global install `npm install -g eslint`
+* [SublimeLinter-contrib-stylelint](https://github.com/kungfusheep/SublimeLinter-contrib-stylelint) - [troubleshooting](http://sublimelinter.readthedocs.io/en/latest/troubleshooting.html#finding-a-linter-executable)
+* [SublimeLinter-phplint](https://github.com/SublimeLinter/SublimeLinter-phplint) - requires phplint installed globally
+* [EditorConfig](http://editorconfig.org/) (basics are we use 4 spaces to indent, not tabs)
