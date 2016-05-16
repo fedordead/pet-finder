@@ -34,8 +34,10 @@
             <?php
                 // get the posts
                 $posts = get_posts();
-                    if($posts){
-                        foreach ($posts as $key => $post){
+
+                if($posts){
+
+                    foreach ($posts as $key => $post){
             ?>
                 <li class="l-grid__item l-grid__item--4-col">
 
@@ -47,12 +49,21 @@
 
                         <div class="c-card__body">
                             <ul>
-                                <li>Species: <?php echo $post->species; ?></li>
-                                <li>Breed: <?php echo $post->breed; ?></li>
-                                <li>Size: <?php echo $post->size; ?></li>
-                                <li>Colour: <?php echo $post->colour; ?></li>
-                                <li>Collar: <?php echo $post->collar; ?></li>
-                                <li>Location: <?php echo $post->location; ?></li>
+                                <li>Species: <?php if($post->species) { echo $post->species; }  else echo '&mdash;' ?></li>
+                                <li>Breed: <?php if($post->breed)   { echo $post->breed; }  else echo '&mdash;' ?></li>
+                                <li>Size: <?php if($post->size)    { echo $post->size; }  else echo '&mdash;' ?></li>
+                                <li>Colour: <?php if($post->colour) { echo $post->colour; }  else echo '&mdash;' ?></li>
+
+                                <?php if($post->collar) { ?>
+                                    <li>Collar: <?php echo $post->collar; ?></li>
+                                <?php } ?>
+
+                                <?php if($post->chipped) { ?>
+                                    <li>Chipped: <?php echo $post->chipped; ?></li>
+                                <?php } ?>
+
+                                <li>Last seen: <?php if($post->location) { echo $post->location; }  else echo '&mdash;' ?></li>
+                                <li>At: <?php if($post->time) { echo $post->time; }  else echo '&mdash;' ?></li>
                             </ul>
                         </div>
                     </a>
