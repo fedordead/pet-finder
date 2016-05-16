@@ -5,9 +5,9 @@
 
 <main class="l-main" role="main">
 
-    <h2>Found</h2>
+    <h2 class="heading heading--main h-spacing-base">Found</h2>
 
-    <p>Pet details</p>
+    <p class="h-spacing-small">Add details of the pet you've found below:</p>
 
 <?php
     include("includes/pet-details-form.php");

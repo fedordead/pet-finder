@@ -42,21 +42,6 @@ $g-color-blue-500: #19a9e5;
 
 
 /**
- * Brand.
- */
-
-$g-color-brand: $g-color-blue-500;
-
-
-/**
- * Text.
- */
-
-// Base
-$g-color-text-base: $g-color-brand;
-
-
-/**
  * Grey.
  */
 
@@ -79,7 +64,19 @@ $g-color-slate-700: #333;
 
 $g-color-slate-800: #303f46;
 
+/**
+ * Brand.
+ */
 
+$g-color-brand: $g-color-blue-500;
+
+
+/**
+ * Text.
+ */
+
+// Base
+$g-color-text-base: $g-color-slate-700;
 
 
 /* 2. Typography

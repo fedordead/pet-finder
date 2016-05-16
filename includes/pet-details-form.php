@@ -12,12 +12,12 @@
 <?php } ?>
 
     <p class="c-radio-switch">
-        <input id="lost" type="radio" value="lost" name="status" class="c-radio-switch__input">
+        <input id="lost" type="radio" value="lost" name="status" class="c-radio-switch__input" <?php if ($page =='lost') { ?>checked<?php } ?>>
         <label for="lost" class="c-radio-switch__label">Lost</label>
     </p>
 
     <p class="c-radio-switch">
-        <input id="found" type="radio" value="found" name="status" class="c-radio-switch__input">
+        <input id="found" type="radio" value="found" name="status" class="c-radio-switch__input" <?php if ($page =='found') { ?>checked<?php } ?>>
         <label for="found" class="c-radio-switch__label">Found</label>
     </p>
 
@@ -30,6 +30,8 @@
 
             <?php if ($page =='search') { ?>
                 <option value="all">Show all</option>
+                <?php } else { ?>
+                <option selected="selected" disabled>Please select</option>
             <?php } ?>
 
             <option value="cat">Cat</option>
@@ -48,6 +50,8 @@
 
             <?php if ($page =='search') { ?>
                 <option value="all">Show all</option>
+                <?php } else { ?>
+                <option selected="selected" disabled>Please select</option>
             <?php } ?>
 
             <option value="alsation">Alsation</option>
@@ -66,6 +70,8 @@
 
             <?php if ($page =='search') { ?>
                 <option value="all">Show all</option>
+                <?php } else { ?>
+                <option selected="selected" disabled>Please select</option>
             <?php } ?>
 
             <option value="small">Small</option>
@@ -85,6 +91,8 @@
 
             <?php if ($page =='search') { ?>
                 <option value="all">Show all</option>
+                <?php } else { ?>
+                <option selected="selected" disabled>Please select</option>
             <?php } ?>
 
             <option value="black">Black</option>
@@ -133,6 +141,8 @@
 
             <?php if ($page =='search') { ?>
                 <option value="all">Show all</option>
+                <?php } else { ?>
+                <option selected="selected" disabled>Please select</option>
             <?php } ?>
 
             <option value="none">None</option>
@@ -158,6 +168,8 @@
 
             <?php if ($page =='search') { ?>
                 <option value="all">Show all</option>
+                <?php } else { ?>
+                <option selected="selected" disabled>Please select</option>
             <?php } ?>
 
             <option value="walton">Walton-on-Thames</option>

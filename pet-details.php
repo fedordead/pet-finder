@@ -1,36 +1,66 @@
 <?php
     $page="pet-details";
     include("includes/header.php");
-    $pet = get_single_post();
-    print_r($pet);
 ?>
 
-<main role="main" class="l-container">
+<div class="l-container">
 
-    <h2 class="heading heading--main h-spacing-base">{{ Lost }}: {{ Barbara }}</h2>
+    <main role="main" class="l-main">
 
-    <img class="h-spacing-base" src="http://placekitten.com/200/300" alt="Place Kitten" />
+    <?php
+    // get the posts
+    $pet = get_single_post();
 
-    <ul class="h-spacing-base">
-        <li>Species: {{ Cat }}</li>
-        <li>Breed: {{ Siamese }}</li>
-        <li>Size: {{ Medium }}</li>
-        <li>Colour: {{ White }}</li>
-        <li>Chipped: {{ No }}</li>
-        <li>Collar: {{ Blue }}</li>
-        <li>Last seen: {{ 14 May 2016 }}, {{ Dibden Purlieu }} [Map]</li>
-    </ul>
+    if($pet){
 
-    <h3>Please contact:</h3>
+    ?>
 
-    <address>
-        <p>{{ David Berner }}</p>
-        <p>{{ 07894 535 194 }}</p>
-        <p>{{ davidajberner@gmail.com }}</p>
-    </address>
+        <h2 class="heading heading--main h-spacing-base"><?php if($pet->status) { echo $pet->status; } else { echo 'Lost:'; } ?> <?php if($pet->name) { echo $pet->name; } else { echo 'Catty McCatFace'; } ?></h2>
+
+        <img class="h-spacing-base" src="http://placekitten.com/200/300" alt="Place Kitten" />
+
+        <ul class="h-spacing-base">
 
 
-</main>
+
+                <li>Species: <?php if($pet->species) { echo $pet->species; } else { echo '&mdash;'; } ?></li>
+                <li>Breed: <?php if($pet->breed)   { echo $pet->breed; } else { echo '&mdash;'; } ?></li>
+                <li>Size: <?php if($pet->size)    { echo $pet->size; } else { echo '&mdash;'; } ?></li>
+                <li>Colour: <?php if($pet->colour) { echo $pet->colour; } else { echo '&mdash;'; } ?></li>
+
+                <?php if($pet->collar) { ?>
+                    <li>Collar: <?php echo $pet->collar; ?></li>
+                <?php } ?>
+
+                <?php if($pet->chipped) { ?>
+                    <li>Chipped: <?php echo $pet->chipped; ?></li>
+                <?php } ?>
+
+                <li>Last seen: <?php if($pet->location) { echo $pet->location; } else { echo '&mdash;'; } ?></li>
+                <li>At: <?php if($pet->time) { echo $pet->time; } else { echo '&mdash;'; } ?></li>
+
+
+
+            </ul>
+
+        <h3>Please contact:</h3>
+
+        <address>
+            <p>{{ David Berner }}</p>
+            <p>{{ 07894 535 194 }}</p>
+            <p>{{ davidajberner@gmail.com }}</p>
+        </address>
+
+        <?php } else { ?>
+
+            <h2 class="heading heading--main h-spacing-base">Awkward...</h2>
+
+            <p>Seems we've lost this pet from our records.  Double lost :S</p>
+
+        <?php } ?>
+    </main>
+
+</div>
 
 <?php
     include("includes/footer.php");
