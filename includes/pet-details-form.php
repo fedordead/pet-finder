@@ -156,12 +156,12 @@
 </p>
 
 <p class="h-spacing-base">
-    <label for="date">Date last seen:</label>
+    <label for="date">Date <span class="js-seen-found-text">last seen</span>:</label>
     <input type="date" id="date" class="c-textual-input" name="date">
 </p>
 
 <p>
-    <label for="location">Location last seen:</label>
+    <label for="location">Location <span class="js-seen-found-text">last seen</span>:</label>
     <span class="c-form-select">
         <select id="location" class="c-form-select__select" name=
         "location">
