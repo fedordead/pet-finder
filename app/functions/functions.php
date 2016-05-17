@@ -100,7 +100,7 @@ function submit_lost(){
 	}
 }
 
-	// Cross Reference with Found Pets? Think the 'does this answer your question' feature on Stack Overflow
+// Cross Reference with Found Pets? Think the 'does this answer your question' feature on Stack Overflow
 
 /* ###### Submit Found Pet ###### */
 
