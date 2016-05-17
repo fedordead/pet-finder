@@ -57,8 +57,8 @@
                                     <li>Collar: <?php echo $post->collar; ?></li>
                                 <?php } ?>
 
-                                <?php if($post->chipped) { ?>
-                                    <li>Chipped: <?php echo $post->chipped; ?></li>
+                                <?php if($post->chip_number) { ?>
+                                    <li>Chipped: <?php echo $post->chip_number; ?></li>
                                 <?php } ?>
 
                                 <li>Last seen: <?php if($post->location) { echo $post->location; } else { echo '&mdash;'; } ?></li>
