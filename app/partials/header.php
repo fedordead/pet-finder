@@ -1,11 +1,11 @@
-<?php include('app/functions.php');?>
+<?php include('functions/functions.php');?>
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pet Detectr &mdash; report lost or found pets</title>
-    <link rel="stylesheet" href="dist/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <svg class="h-hide" xmlns="http://www.w3.org/2000/svg">

@@ -1,6 +1,6 @@
 <?php
     $page="search";
-    include("includes/header.php");
+    include("partials/header.php");
 ?>
 
 <div class="l-side-by-side l-side-by-side--gutterless">
@@ -14,7 +14,7 @@
                 <form>
 
 <?php
-    include("includes/pet-details-form.php");
+    include("partials/pet-details-form.php");
 ?>
 
                 </form>
@@ -84,5 +84,5 @@
 <!-- .l-side-by-side -->
 
 <?php
-    include("includes/footer.php");
+    include("partials/footer.php");
 ?>

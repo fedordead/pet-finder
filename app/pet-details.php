@@ -1,6 +1,6 @@
 <?php
     $page="pet-details";
-    include("includes/header.php");
+    include("partials/header.php");
 ?>
 
 <div class="l-container">
@@ -62,5 +62,5 @@
 </div>
 
 <?php
-    include("includes/footer.php");
+    include("partials/footer.php");
 ?>
