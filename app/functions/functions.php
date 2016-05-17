@@ -129,11 +129,13 @@ function submit_lost(){
 
 /* ###### Helper Functions ###### */
 
+// Print out variable if it exists, replace with default if not
 function print_tag($var, $default = '&mdash;') {
 	echo isset($var) ? $var : $default;
 }
 
+// Pretty URLs
 function parseUrl() {
-// Trim URL, Sanitize and explode to array at each /
+	// Trim URL, Sanitize and explode to array at each /
 	return $url = explode('/pet-details/', filter_var(rtrim($_SERVER['REQUEST_URI'], '/'), FILTER_SANITIZE_URL));
 }
