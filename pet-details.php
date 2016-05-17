@@ -36,7 +36,7 @@
                 <?php } ?>
 
                 <li>Last seen: <?php print_tag($pet->location); ?></li>
-                <li>At: <?php print_tag($pet->time); ?></li>
+                <li>At: <?php print_tag(date('m/d/Y h:m', $pet->time)); ?></li>
 
 
 
