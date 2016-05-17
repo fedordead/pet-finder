@@ -38,7 +38,7 @@
             ?>
                 <li class="l-grid__item l-grid__item--4-col">
 
-                    <a class="c-card" href="/pet-details/<?php echo substr($key, 1); ?>">
+                    <a class="c-card" href="/pet/<?php echo substr($key, 1); ?>">
 
                         <div class="c-card__header">
                             <h3 class="heading heading--main"><?php print_tag($post->name, 'Pet Name'); ?></h3>
