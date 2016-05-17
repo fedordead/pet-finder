@@ -28,6 +28,11 @@
     </div>
 
     <p class="h-spacing-base">
+        <label for="pet-name">Pet's name:</label>
+        <input type="text" id="pet-name" name="pet_name" class="c-textual-input">
+    </p>
+
+    <p class="h-spacing-base">
         <label for="species">Species:</label>
         <span class="c-form-select">
             <select id="species" class="c-form-select__select" name="species">
