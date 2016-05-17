@@ -33,16 +33,13 @@
 
                 <nav role="navigation">
                     <ul class="c-nav">
-                        <li class="c-nav__item <?php if ($page=='search')
-              echo 'is-current'; ?>">
+                        <li class="c-nav__item <?php if ($page=='search') echo 'is-current'; ?>">
                             <a class="c-nav__link" href="/">Search Database</a>
                         </li>
-                        <li class="c-nav__item <?php if ($page=='lost')
-              echo 'is-current'; ?>">
+                        <li class="c-nav__item <?php if ($page=='lost') echo 'is-current'; ?>">
                             <a class="c-nav__link" href="/lost">Report Lost</a>
                         </li>
-                        <li class="c-nav__item <?php if ($page=='found')
-              echo 'is-current'; ?>">
+                        <li class="c-nav__item <?php if ($page=='found') echo 'is-current'; ?>">
                             <a class="c-nav__link" href="/found">Report Found</a>
                         </li>
                     </ul>
