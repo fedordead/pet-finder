@@ -9,15 +9,13 @@
 
         <div class="l-sidebar">
 
-            <h2 class="heading heading--main h-spacing-base">Filters</h2>
-
-                <form>
+            <form>
 
 <?php
     include("partials/pet-details-form.php");
 ?>
 
-                </form>
+            </form>
 
         </div>
     </aside>
