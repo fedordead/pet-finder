@@ -38,18 +38,18 @@
             ?>
                 <li class="l-grid__item l-grid__item--4-col">
 
-                    <a class="c-card" href="/pet-details.php?pet=<?php echo substr($key, 1); ?>">
+                    <a class="c-card" href="/pet-details/<?php echo substr($key, 1); ?>">
 
                         <div class="c-card__header">
-                            <h3 class="heading heading--main"><?php if($post->name) { echo $post->name; } else { echo 'Pet Name'; } ?></h3>
+                            <h3 class="heading heading--main"><?php print_tag($post->name, 'Pet Name'); ?></h3>
                         </div>
 
                         <div class="c-card__body">
                             <ul>
-                                <li>Species: <?php if($post->species) { echo $post->species; } else { echo '&mdash;'; } ?></li>
-                                <li>Breed: <?php if($post->breed)   { echo $post->breed; } else { echo '&mdash;'; } ?></li>
-                                <li>Size: <?php if($post->size)    { echo $post->size; } else { echo '&mdash;'; } ?></li>
-                                <li>Colour: <?php if($post->colour) { echo $post->colour; } else { echo '&mdash;'; } ?></li>
+                                <li>Species: <?php print_tag($post->species); ?></li>
+                                <li>Breed: <?php print_tag($post->breed); ?></li>
+                                <li>Size: <?php print_tag($post->size); ?></li>
+                                <li>Colour: <?php print_tag($post->colour); ?></li>
 
                                 <?php if($post->collar) { ?>
                                     <li>Collar: <?php echo $post->collar; ?></li>
@@ -59,8 +59,8 @@
                                     <li>Chipped: <?php echo $post->chip_number; ?></li>
                                 <?php } ?>
 
-                                <li>Last seen: <?php if($post->location) { echo $post->location; } else { echo '&mdash;'; } ?></li>
-                                <li>At: <?php if($post->time) { echo $post->time; } else { echo '&mdash;'; } ?></li>
+                                <li>Last seen: <?php print_tag($post->location); ?></li>
+                                <li>At: <?php print_tag(date('m/d/Y h:m', $post->time)); ?></li>
                             </ul>
                         </div>
                     </a>

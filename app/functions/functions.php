@@ -38,7 +38,7 @@ function get_posts(){
 			}
 			// Compare params array to post_values array. If all params in post_values, push to the_posts
 			if (!array_diff( $params, $post_values )){
-				$the_posts[] = $array[$id];
+				$the_posts[$id] = $array[$id];
 			}
 		}
 	} else {
@@ -56,8 +56,10 @@ function get_posts(){
 
 function get_single_post(){
 	
-	if(isset($_GET['pet'])){
-		$post_id = $_GET['pet'];
+	$url = parseUrl();
+
+	if(isset($url[1])){
+		$post_id = $url[1];
 		// Get Firebase JSON of single post
 		$json = file_get_contents(FIREBASE_URL.'/posts/p'.$post_id.'.json');
 		// Decode JSON
@@ -129,4 +131,9 @@ function submit_lost(){
 
 function print_tag($var, $default = '&mdash;') {
 	echo isset($var) ? $var : $default;
+}
+
+function parseUrl() {
+// Trim URL, Sanitize and explode to array at each /
+	return $url = explode('/pet-details/', filter_var(rtrim($_SERVER['REQUEST_URI'], '/'), FILTER_SANITIZE_URL));
 }
