@@ -1,0 +1,37 @@
+/* ============================================================================
+   COMPONENTS -> BUTTON
+   ========================================================================= */
+
+/**
+ * Settings.
+ */
+
+$c-button-background-color: #4DAF7C;
+
+$c-button-background-hover-color: #019875;
+
+
+/**
+ * Primary.
+ *
+ * 1. Need to declare the color for the hover and focus states in order to
+ *    override the base link styles.
+ */
+
+.c-button {
+    align-items: center;
+    background-color: $c-button-background-color;
+    border-radius: $g-border-radius;
+    color: $shell-g-color-white;
+    display: inline-flex;
+    font-weight: $shell-g-font-weight-bold;
+    padding: rem($shell-g-spacing-small) rem($shell-g-spacing-x-large);
+    text-decoration: none;
+    transition: background-color 0.12s ease;
+
+    &:hover, // [1]
+    &:focus { // [1]
+        color: $shell-g-color-white;
+        background-color: $c-button-background-hover-color;
+    }
+}

@@ -11,6 +11,7 @@
 *.o
 *.so
 dist/
+app/assets
 
 
 # Packages #
