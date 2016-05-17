@@ -30,7 +30,7 @@ $c-button-background-hover-color: $g-color-green-700;
     transition: background-color 0.12s ease;
 
     &:hover, // [1]
-    &:focus { // [1]
+    &:focus {
         background-color: $c-button-background-hover-color;
         color: $shell-g-color-white;
     }
