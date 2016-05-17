@@ -1,6 +1,6 @@
 <?php
     $page="found";
-    include("includes/header.php");
+    include("partials/header.php");
 ?>
 
 <main class="l-main" role="main">
@@ -10,11 +10,11 @@
     <p class="h-spacing-small">Add details of the pet you've found below:</p>
 
 <?php
-    include("includes/pet-details-form.php");
+    include("partials/pet-details-form.php");
 ?>
 
 </main>
 
 <?php
-    include("includes/footer.php");
+    include("partials/footer.php");
 ?>

@@ -1,6 +1,6 @@
 <?php
     $page="lost";
-    include("includes/header.php");
+    include("partials/header.php");
 ?>
 
 <main class="l-main" role="main">
@@ -10,11 +10,11 @@
     <p class="h-spacing-small">Add details of your lost pet below:</p>
 
 <?php
-    include("includes/pet-details-form.php");
+    include("partials/pet-details-form.php");
 ?>
 
 </main>
 
 <?php
-    include("includes/footer.php");
+    include("partials/footer.php");
 ?>
