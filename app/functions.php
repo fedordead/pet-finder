@@ -124,3 +124,9 @@ function submit_lost(){
 /* ###### Find Lost Pet ('I Found it') ###### */
 
 /* ###### Search/Filter ###### */
+
+/* ###### Helper Functions ###### */
+
+function print_tag($var, $default = '&mdash;') {
+	echo isset($var) ? $var : $default;
+}
