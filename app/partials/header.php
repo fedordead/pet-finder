@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pet Detectr &mdash; report lost or found pets</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
     <svg class="h-hide" xmlns="http://www.w3.org/2000/svg">
@@ -33,17 +33,14 @@
 
                 <nav role="navigation">
                     <ul class="c-nav">
-                        <li class="c-nav__item <?php if ($page=='search')
-              echo 'is-current'; ?>">
+                        <li class="c-nav__item <?php if ($page=='search') echo 'is-current'; ?>">
                             <a class="c-nav__link" href="/">Search Database</a>
                         </li>
-                        <li class="c-nav__item <?php if ($page=='lost')
-              echo 'is-current'; ?>">
-                            <a class="c-nav__link" href="/lost.php">Report Lost</a>
+                        <li class="c-nav__item <?php if ($page=='lost') echo 'is-current'; ?>">
+                            <a class="c-nav__link" href="/lost">Report Lost</a>
                         </li>
-                        <li class="c-nav__item <?php if ($page=='found')
-              echo 'is-current'; ?>">
-                            <a class="c-nav__link" href="/found.php">Report Found</a>
+                        <li class="c-nav__item <?php if ($page=='found') echo 'is-current'; ?>">
+                            <a class="c-nav__link" href="/found">Report Found</a>
                         </li>
                     </ul>
                 </nav>
