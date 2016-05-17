@@ -11,7 +11,7 @@
 /* ###### Get all posts ###### */
 
 function get_posts(){
-	
+
 	// Get Firebase JSON
 	$json = file_get_contents(FIREBASE_URL.'/posts.json');
 	// Decode JSON
@@ -22,7 +22,7 @@ function get_posts(){
 	$the_posts = [];
 	// Get Params
 	$url_params = $_GET;
-	
+
 	if(!empty($url_params)){	
 		// Push each param to array
 		foreach ($url_params as $param => $value) {
@@ -44,7 +44,7 @@ function get_posts(){
 	} else {
 		$the_posts = $array;
 	}
-	
+
 
 	// Return filtered posts
 	return array_reverse($the_posts);
@@ -55,7 +55,7 @@ function get_posts(){
 /* ###### Get Single Post ###### */
 
 function get_single_post(){
-	
+
 	$url = parseUrl();
 
 	if(isset($url[1])){
@@ -104,24 +104,24 @@ function submit_lost(){
 
 /* ###### Submit Found Pet ###### */
 
-	/* Fields
-	- Type
-	- Breed
-	- Size
-	- Colour
-	- Chipped?
-	- Collar? (colour)
-	- Picture(s)
-	- Found Location - Post Code/Geo Location
-	- Found Date
-	- Any Other Notes
-	*/
+/* Fields
+- Type
+- Breed
+- Size
+- Colour
+- Chipped?
+- Collar? (colour)
+- Picture(s)
+- Found Location - Post Code/Geo Location
+- Found Date
+- Any Other Notes
+*/
 
-	// Cross Reference with Lost Pets? Think the 'does this answer your question' feature on Stack Overflow
+// Cross Reference with Lost Pets? Think the 'does this answer your question' feature on Stack Overflow
 
 /* ###### Claim Found Pet ('That's mine!') ###### */
 
-	// How do users get in touch?
+// How do users get in touch?
 
 /* ###### Find Lost Pet ('I Found it') ###### */
 
