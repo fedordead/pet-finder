@@ -31,8 +31,8 @@
                 <?php if($pet->collar) { ?>
                     <li>Collar: <?php echo $pet->collar; ?></li>
                 <?php } ?>
-                <?php if($pet->chipped) { ?>
-                    <li>Chipped: <?php echo $pet->chipped; ?></li>
+                <?php if($pet->chip_number) { ?>
+                    <li>Chipped: <?php echo $pet->chip_number; ?></li>
                 <?php } ?>
 
                 <li>Last seen: <?php print_tag($pet->location); ?></li>
