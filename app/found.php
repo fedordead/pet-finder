@@ -9,9 +9,15 @@
 
     <p class="h-spacing-small">Add details of the pet you've found below:</p>
 
-<?php
-    include("partials/pet-details-form.php");
-?>
+    <form>
+
+    <?php
+        include("partials/pet-details-form.php");
+    ?>
+
+        <button class="c-button" type="submit">Report found</button>
+
+    </form>
 
 </main>
 

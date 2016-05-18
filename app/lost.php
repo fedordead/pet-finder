@@ -7,9 +7,15 @@
 
     <h2 class="heading heading--main h-spacing-base">Lost</h2>
 
-<?php
+    <form>
+
+    <?php
     include("partials/pet-details-form.php");
-?>
+    ?>
+
+        <button class="c-button" type="submit">Report lost</button>
+
+    </form>
 
 </main>
 
