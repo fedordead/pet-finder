@@ -138,7 +138,7 @@
         </p>
     </div>
 
-    <p class="h-spacing-base">
+    <p id="chip-number-wrap" class="h-spacing-base h-hide">
         <label for="chip-number">Chip number:</label>
         <input type="text" id="chip-number" name="chip_number" class="c-textual-input">
     </p>
