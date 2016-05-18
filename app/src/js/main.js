@@ -38,9 +38,7 @@ petDetectrApp.addEventToNodes = function addEventToNodes(evt, nodes, func) {
 
 // Toggle the h-hide class on target
 petDetectrApp.toggleDisplay = function toggleDisplayOnOff(target) {
-    /*
     target.classList.toggle('h-hide');
-    */
 };
 
 // Set the use of h-hide class on target
