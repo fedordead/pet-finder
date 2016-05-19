@@ -1,5 +1,7 @@
 <?php
 
+/* ###### Get all posts ###### */
+
 function get_posts(){
 
     // Get Firebase JSON

@@ -8,7 +8,7 @@
 *
 */
 
-/* ###### Get all posts ###### */
+/* ###### INIT ###### */
 
 function init() {
     // Default Page
@@ -73,3 +73,5 @@ function parseUrl() {
         return $url = explode('/', filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL));
     }
 }
+
+?>
