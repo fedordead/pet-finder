@@ -1,15 +1,9 @@
-<?php
-    $page="pet-details";
-    include("partials/header.php");
-?>
 
 <div class="l-container">
 
     <main role="main" class="l-main">
 
     <?php
-    // get the posts
-    $pet = get_single_post();
 
     if($pet){
 
@@ -60,7 +54,3 @@
     </main>
 
 </div>
-
-<?php
-    include("partials/footer.php");
-?>

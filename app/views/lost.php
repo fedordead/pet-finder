@@ -1,13 +1,8 @@
-<?php
-    $page="lost";
-    include("partials/header.php");
-?>
-
 <main class="l-main" role="main">
 
     <h2 class="heading heading--main h-spacing-base">Lost</h2>
 
-    <form method="POST" action="functions/new-pet.php">
+    <form method="POST" action="controllers/new-pet.php">
 
     <?php
     include("partials/pet-details-form.php");
@@ -19,6 +14,3 @@
 
 </main>
 
-<?php
-    include("partials/footer.php");
-?>
