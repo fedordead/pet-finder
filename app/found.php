@@ -9,7 +9,7 @@
 
     <p class="h-spacing-small">Add details of the pet you've found below:</p>
 
-    <form>
+    <form method="POST" action="functions/new-pet.php">
 
     <?php
         include("partials/pet-details-form.php");

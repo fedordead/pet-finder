@@ -76,12 +76,11 @@ function get_single_post(){
 
 /* ###### Submit Lost Pet ###### */
 
-function submit_lost(){
+function submit_pet(){
     $post_id = $_SERVER['REQUEST_TIME'];
-    header('Location:http://localhost/pet-details.php?pet='.$post_id);
+    header('Location:http://localhost/pet/'.$post_id);
     $post_params = $_POST;
     $post_params['time'] = $post_id;
-    $post_params['status'] = 'lost';
 
     // CURL stuff
     $url = FIREBASE_URL.'/posts/p'.$post_id.'.json';    

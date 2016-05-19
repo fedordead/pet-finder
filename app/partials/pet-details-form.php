@@ -14,17 +14,18 @@
         </p>
 
     <?php } ?>
-
+    <?php if ($page =='lost') { ?>
         <p class="c-radio-switch">
-            <input id="lost" type="radio" value="Lost" name="status" class="c-radio-switch__input" <?php if ($page =='lost') { ?>checked<?php } ?>>
+            <input id="lost" type="radio" value="Lost" name="status" class="c-radio-switch__input"checked>
             <label for="lost" class="c-radio-switch__label">Lost</label>
         </p>
-
+    <?php } ?>
+    <?php if ($page =='found') { ?>
         <p class="c-radio-switch">
-            <input id="found" type="radio" value="Found" name="status" class="c-radio-switch__input" <?php if ($page =='found') { ?>checked<?php } ?>>
+            <input id="found" type="radio" value="Found" name="status" class="c-radio-switch__input" checked>
             <label for="found" class="c-radio-switch__label">Found</label>
         </p>
-
+    <?php } ?>
     </div>
 
     <p class="h-spacing-base">
