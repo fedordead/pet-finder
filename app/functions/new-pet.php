@@ -1,3 +1,3 @@
 <?php require 'functions.php'; 
-	submit_lost();
+	submit_pet();
 ?>

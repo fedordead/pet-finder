@@ -7,7 +7,7 @@
 
     <h2 class="heading heading--main h-spacing-base">Lost</h2>
 
-    <form>
+    <form method="POST" action="functions/new-pet.php">
 
     <?php
     include("partials/pet-details-form.php");
