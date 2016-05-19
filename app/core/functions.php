@@ -17,22 +17,22 @@ function init() {
     $url = parseURL();
     // update page if set
     if(isset($url[0])){
-        if(file_exists('controllers/'. $url[0] . '.php')){
-            $page = $url[0];
-        }
-        else {
-            $page = '404';
-        }
+        $page = $url[0];
     }
-
-    // Require Controller
-    require_once 'controllers/' .$page. '.php';
-
+    
+    // Check controller
+    if(file_exists('controllers/'. $page . '.php')){
+        require_once 'controllers/' .$page. '.php';
+    }
     // include Header
     include("partials/header.php");
 
     // Require View
-    require_once 'views/' . $page . '.php';
+    if(file_exists('views/'. $page . '.php')){
+        require_once 'views/' . $page . '.php';
+    } else {
+        require_once 'views/404.php';
+    }
 
     include("partials/footer.php");
 }
