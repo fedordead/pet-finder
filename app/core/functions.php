@@ -16,8 +16,13 @@ function init() {
     // get URL
     $url = parseURL();
     // update page if set
-    if(isset($url[0]) && file_exists('controllers/'. $url[0] . '.php')){
-        $page = $url[0];
+    if(isset($url[0])){
+        if(file_exists('controllers/'. $url[0] . '.php')){
+            $page = $url[0];
+        }
+        else {
+            $page = '404';
+        }
     }
 
     // Require Controller
