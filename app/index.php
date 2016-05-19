@@ -1,8 +1,8 @@
-<?php
-    include("partials/header.php");
+<?php 
 
-    init();
+require 'core/functions.php';
 
-    include("partials/footer.php");
+init();
+
 ?>
 

@@ -1,5 +1,5 @@
-<?php require '../core/functions.php';
+<?php
 
-submit_pet();
+submit_post();
 
 ?>

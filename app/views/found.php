@@ -4,7 +4,7 @@
 
     <p class="h-spacing-small">Add details of the pet you've found below:</p>
 
-    <form method="POST" action="functions/new-pet.php">
+    <form method="POST" action="/new-pet">
 
     <?php
         include("partials/pet-details-form.php");
