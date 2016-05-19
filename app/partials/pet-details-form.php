@@ -14,13 +14,13 @@
         </p>
 
     <?php } ?>
-    <?php if ($page =='lost') { ?>
+    <?php if ($page =='lost' || $page =='search') { ?>
         <p class="c-radio-switch">
             <input id="lost" type="radio" value="Lost" name="status" class="c-radio-switch__input"checked>
             <label for="lost" class="c-radio-switch__label">Lost</label>
         </p>
     <?php } ?>
-    <?php if ($page =='found') { ?>
+    <?php if ($page =='found' || $page =='search') { ?>
         <p class="c-radio-switch">
             <input id="found" type="radio" value="Found" name="status" class="c-radio-switch__input" checked>
             <label for="found" class="c-radio-switch__label">Found</label>
