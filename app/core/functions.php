@@ -3,14 +3,44 @@
 /*
 *
 *
-* Functions 
+* Global Functions 
 *
 *
 */
 
+/* ###### INIT ###### */
+
+function init() {
+    // Default Page
+    $page = "index";
+    // get URL
+    $url = parseURL();
+    // update page if set
+    if(isset($url[0])){
+        $page = $url[0];
+    }
+    
+    // Check controller
+    if(file_exists('controllers/'. $page . '.php')){
+        require_once 'controllers/' .$page. '.php';
+    }
+    // include Header
+    include("partials/header.php");
+
+    // Require View
+    if(file_exists('views/'. $page . '.php')){
+        require_once 'views/' . $page . '.php';
+    } else {
+        require_once 'views/404.php';
+    }
+
+    include("partials/footer.php");
+}
+
+
 /* ###### Get all posts ###### */
 
-function get_posts(){
+function get_all_posts(){
 
     // Get Firebase JSON
     $json = file_get_contents(FIREBASE_URL.'/posts.json');
@@ -49,7 +79,7 @@ function get_posts(){
     // Return filtered posts
     return array_reverse($the_posts);
 
-}
+}   
 
 
 /* ###### Get Single Post ###### */
@@ -74,9 +104,9 @@ function get_single_post(){
 }
 
 
-/* ###### Submit Lost Pet ###### */
+/* ###### Submit Pet ###### */
 
-function submit_pet(){
+function submit_post(){
     $post_id = $_SERVER['REQUEST_TIME'];
     header('Location:http://localhost/pet/'.$post_id);
     $post_params = $_POST;
@@ -99,33 +129,6 @@ function submit_pet(){
     }
 }
 
-// Cross Reference with Found Pets? Think the 'does this answer your question' feature on Stack Overflow
-
-/* ###### Submit Found Pet ###### */
-
-/* Fields
-- Type
-- Breed
-- Size
-- Colour
-- Chipped?
-- Collar? (colour)
-- Picture(s)
-- Found Location - Post Code/Geo Location
-- Found Date
-- Any Other Notes
-*/
-
-// Cross Reference with Lost Pets? Think the 'does this answer your question' feature on Stack Overflow
-
-/* ###### Claim Found Pet ('That's mine!') ###### */
-
-// How do users get in touch?
-
-/* ###### Find Lost Pet ('I Found it') ###### */
-
-/* ###### Search/Filter ###### */
-
 /* ###### Helper Functions ###### */
 
 // Print out variable if it exists, replace with default if not
@@ -136,5 +139,10 @@ function print_tag($var, $default = '&mdash;') {
 // Pretty URLs
 function parseUrl() {
     // Trim URL, Sanitize and explode to array at each /
-    return $url = explode('/pet/', filter_var(rtrim($_SERVER['REQUEST_URI'], '/'), FILTER_SANITIZE_URL));
+    if(isset($_GET['url'])) {
+        // Trim URL, Sanitize and explode to array at each /
+        return $url = explode('/', filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL));
+    }
 }
+
+?>
