@@ -1,14 +1,36 @@
 const petDetectrApp = petDetectrApp || {};
 
-petDetectrApp.formSetup = function formSetup() {
+petDetectrApp.formSetup = function formSetup(formName = 'report_form') {
+    // Pet info
+    this.petStatusInput = document[formName].status;
+    this.isChippedInput = document[formName].is_chipped;
+
+    // Required fields
+    this.requiredFields = document[formName].getElementsByClassName('js-required-field');
+
+
     // Grab radio buttons and text nodes
-    this.petStatus = document.querySelectorAll('[name="status"]');
     this.lastSeenText = document.querySelectorAll('.js-seen-found-text');
-    this.isChippedSelector = document.querySelectorAll('[name=is-chipped] + label');
     this.chipNumber = document.querySelector('#chip-number-wrap');
 
-    this.addEventToNodes('click', this.petStatus, this.updateDateAndLocationText);
-    this.addEventToNodes('click', this.isChippedSelector, this.hideShowChipNumber);
+    this.addEventToNodes('click', this.petStatusInput, this.updateDateAndLocationText);
+    this.addEventToNodes('click', this.isChippedInput, this.hideShowChipNumber);
+
+    // Basic required validation
+    this.addEventToNodes('blur', this.requiredFields, this.validateRequired);
+    this.addEventToNodes('focus', this.requiredFields, this.clearValidationIndicators);
+};
+
+petDetectrApp.clearValidationIndicators = function clearValidationIndicators(e) {
+    e.target.classList.remove('is-invalid');
+    petDetectrApp.setHideShow(e.target.nextElementSibling, false);
+};
+
+petDetectrApp.validateRequired = function validateRequired(e) {
+    if (e.target.value === '') {
+        e.target.classList.add('is-invalid');
+        petDetectrApp.setHideShow(e.target.nextElementSibling, true);
+    }
 };
 
 petDetectrApp.updateDateAndLocationText = function updateDateAndLocationText(e) {
@@ -36,11 +58,6 @@ petDetectrApp.addEventToNodes = function addEventToNodes(evt, nodes, func) {
     }
 };
 
-// Toggle the h-hide class on target
-petDetectrApp.toggleDisplay = function toggleDisplayOnOff(target) {
-    target.classList.toggle('h-hide');
-};
-
 // Set the use of h-hide class on target
 petDetectrApp.setHideShow = function showHideElement(target, display) {
     if (display) {
@@ -53,13 +70,9 @@ petDetectrApp.setHideShow = function showHideElement(target, display) {
 // Chip number h-hide switching
 petDetectrApp.hideShowChipNumber = function hideShowChipNumber(e) {
     const self = petDetectrApp;
-    const isChipped = (e.target.getAttribute('for') === 'chipped') ? true : false;
+    const isChipped = e.target.value === 'chipped';
 
-    if (isChipped) {
-        self.setHideShow(self.chipNumber, true);
-    } else {
-        self.setHideShow(self.chipNumber, false);
-    }
+    self.setHideShow(self.chipNumber, isChipped);
 };
 
 petDetectrApp.formSetup();

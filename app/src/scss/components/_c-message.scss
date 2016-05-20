@@ -1,0 +1,20 @@
+/* ============================================================================
+   COMPONENTS -> MESSAGE
+   ========================================================================= */
+
+/**
+ * Base.
+ */
+
+.c-message {
+    font-size: rem($shell-g-font-size-small);
+}
+
+
+/**
+ * Modifier: error.
+ */
+
+.c-message--error {
+    color: $g-color-error;
+}

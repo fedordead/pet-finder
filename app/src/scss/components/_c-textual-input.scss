@@ -13,11 +13,10 @@
     border-radius: $g-border-radius;
     display: block;
     font-size: rem($shell-g-font-size-large);
-    padding: rem($shell-g-spacing-x-small) rem($shell-g-spacing-base); // [4]
+    padding: rem($shell-g-spacing-x-small) rem($shell-g-spacing-base);
     width: 100%;
 }
 
-
-
-
-
+.c-textual-input.is-invalid {
+    border-color: $g-color-error;
+}

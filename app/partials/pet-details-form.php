@@ -22,7 +22,7 @@
             <input id="found" type="radio" value="Found" name="status" class="c-radio-switch__input">
             <label for="found" class="c-radio-switch__label">Found</label>
         </p>
-x
+
     </div>
 
     <?php } ?>
@@ -126,19 +126,19 @@ x
     <?php if ($page =='index') { ?>
 
         <p class="c-radio-switch">
-            <input id="both-chipped" type="radio" value="all" name="is-chipped" class="c-radio-switch__input" checked>
+            <input id="both-chipped" type="radio" value="all" name="is_chipped" class="c-radio-switch__input" checked>
             <label for="both-chipped" class="c-radio-switch__label">All</label>
         </p>
 
     <?php } ?>
 
         <p class="c-radio-switch">
-            <input id="chipped" type="radio" value="all" name="is-chipped" class="c-radio-switch__input">
+            <input id="chipped" type="radio" value="chipped" name="is_chipped" class="c-radio-switch__input">
             <label for="chipped" class="c-radio-switch__label">Yes</label>
         </p>
 
         <p class="c-radio-switch">
-            <input id="not-chipped" type="radio" value="all" name="is-chipped" class="c-radio-switch__input">
+            <input id="not-chipped" type="radio" value="not-chipped" name="is_chipped" class="c-radio-switch__input">
             <label for="not-chipped" class="c-radio-switch__label">No</label>
         </p>
     </div>
@@ -205,13 +205,15 @@ x
     <legend class="h-spacing-small">Your contact details</legend>
 
     <p class="h-spacing-base">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" class="c-textual-input">
+        <label for="name" class="is-required">Name: <span class="h-hide-visually">(required)</span></label>
+        <input type="text" id="name" name="name" class="c-textual-input js-required-field">
+        <span class="c-message c-message--error h-hide js-error-message">We're gonna need your name I'm afraid, so people can contact you.</span>
     </p>
 
     <p class="h-spacing-base">
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" class="c-textual-input">
+        <label for="email" class="is-required">Email: <span class="h-hide-visually">(required)</span></label>
+        <input type="text" id="email" name="email" class="c-textual-input js-required-field">
+        <span class="c-message c-message--error h-hide js-error-message">Hook us up with your email dawg.  Just makes life easier for all parties.</span>
     </p>
 
     <p>
