@@ -1,32 +1,36 @@
-<fieldset <?php if ($page != 'search') { echo 'class="h-spacing-large"'; } ?>>
+<fieldset <?php if ($page != 'index') { echo 'class="h-spacing-large"'; } ?>>
 
-    <legend class="h-spacing-small"><?php if ($page =='search') { echo 'Filters'; } else { echo 'Pet details'; } ?></legend>
+    <legend class="h-spacing-small"><?php if ($page == 'index') { echo 'Filters'; } else { echo 'Pet details'; } ?></legend>
+
+    <?php if ($page == 'index') { ?>
 
     <p class="h-spacing-tiny">Status:</p>
 
     <div class="c-radio-switch-container h-spacing-base">
-
-    <?php if ($page =='search') { ?>
 
         <p class="c-radio-switch">
             <input id="lost-found" type="radio" value="all" name="status" class="c-radio-switch__input" checked>
             <label for="lost-found" class="c-radio-switch__label">All</label>
         </p>
 
-    <?php } ?>
-    <?php if ($page =='lost' || $page =='search') { ?>
         <p class="c-radio-switch">
-            <input id="lost" type="radio" value="Lost" name="status" class="c-radio-switch__input"checked>
+            <input id="lost" type="radio" value="Lost" name="status" class="c-radio-switch__input">
             <label for="lost" class="c-radio-switch__label">Lost</label>
         </p>
-    <?php } ?>
-    <?php if ($page =='found' || $page =='search') { ?>
+
         <p class="c-radio-switch">
-            <input id="found" type="radio" value="Found" name="status" class="c-radio-switch__input" checked>
+            <input id="found" type="radio" value="Found" name="status" class="c-radio-switch__input">
             <label for="found" class="c-radio-switch__label">Found</label>
         </p>
-    <?php } ?>
+x
     </div>
+
+    <?php } ?>
+
+    <?php if ($page == 'lost' || $page == 'found') { ?>
+        <input type="hidden" name="status" value="<?php echo ucwords($page) ?>">
+    <?php } ?>
+
 
     <p class="h-spacing-base">
         <label for="pet-name">Pet's name:</label>
@@ -38,7 +42,7 @@
         <span class="c-form-select">
             <select id="species" class="c-form-select__select" name="species">
 
-                <?php if ($page =='search') { ?>
+                <?php if ($page =='index') { ?>
                     <option value="all">Show all</option>
                     <?php } else { ?>
                     <option selected="selected" disabled>Please select</option>
@@ -58,7 +62,7 @@
         <span class="c-form-select">
             <select id="breed" class="c-form-select__select" name="breed">
 
-                <?php if ($page =='search') { ?>
+                <?php if ($page =='index') { ?>
                     <option value="all">Show all</option>
                     <?php } else { ?>
                     <option selected="selected" disabled>Please select</option>
@@ -78,7 +82,7 @@
         <span class="c-form-select">
             <select id="size" class="c-form-select__select" name="size">
 
-                <?php if ($page =='search') { ?>
+                <?php if ($page =='index') { ?>
                     <option value="all">Show all</option>
                     <?php } else { ?>
                     <option selected="selected" disabled>Please select</option>
@@ -99,7 +103,7 @@
         <span class="c-form-select">
             <select id="colour" class="c-form-select__select" name="colour">
 
-                <?php if ($page =='search') { ?>
+                <?php if ($page =='index') { ?>
                     <option value="all">Show all</option>
                     <?php } else { ?>
                     <option selected="selected" disabled>Please select</option>
@@ -119,7 +123,7 @@
 
     <div class="c-radio-switch-container h-spacing-base">
 
-    <?php if ($page =='search') { ?>
+    <?php if ($page =='index') { ?>
 
         <p class="c-radio-switch">
             <input id="both-chipped" type="radio" value="all" name="is-chipped" class="c-radio-switch__input" checked>
@@ -149,7 +153,7 @@
         <span class="c-form-select">
             <select id="collar" class="c-form-select__select" name="collar">
 
-                <?php if ($page =='search') { ?>
+                <?php if ($page =='index') { ?>
                     <option value="all">Show all</option>
                     <?php } else { ?>
                     <option selected="selected" disabled>Please select</option>
@@ -176,7 +180,7 @@
             <select id="location" class="c-form-select__select" name=
             "location">
 
-                <?php if ($page =='search') { ?>
+                <?php if ($page =='index') { ?>
                     <option value="all">Show all</option>
                     <?php } else { ?>
                     <option selected="selected" disabled>Please select</option>
@@ -194,7 +198,7 @@
 
 </fieldset>
 
-<?php if ($page != 'search') { ?>
+<?php if ($page != 'index') { ?>
 
 <fieldset>
 
