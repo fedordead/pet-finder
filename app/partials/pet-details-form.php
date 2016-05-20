@@ -22,7 +22,7 @@
             <input id="found" type="radio" value="Found" name="status" class="c-radio-switch__input">
             <label for="found" class="c-radio-switch__label">Found</label>
         </p>
-x
+
     </div>
 
     <?php } ?>
