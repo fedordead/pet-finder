@@ -126,19 +126,19 @@
     <?php if ($page =='index') { ?>
 
         <p class="c-radio-switch">
-            <input id="both-chipped" type="radio" value="all" name="is-chipped" class="c-radio-switch__input" checked>
+            <input id="both-chipped" type="radio" value="all" name="is_chipped" class="c-radio-switch__input" checked>
             <label for="both-chipped" class="c-radio-switch__label">All</label>
         </p>
 
     <?php } ?>
 
         <p class="c-radio-switch">
-            <input id="chipped" type="radio" value="all" name="is-chipped" class="c-radio-switch__input">
+            <input id="chipped" type="radio" value="chipped" name="is_chipped" class="c-radio-switch__input">
             <label for="chipped" class="c-radio-switch__label">Yes</label>
         </p>
 
         <p class="c-radio-switch">
-            <input id="not-chipped" type="radio" value="all" name="is-chipped" class="c-radio-switch__input">
+            <input id="not-chipped" type="radio" value="not-chipped" name="is_chipped" class="c-radio-switch__input">
             <label for="not-chipped" class="c-radio-switch__label">No</label>
         </p>
     </div>
