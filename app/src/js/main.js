@@ -3,7 +3,9 @@ const petDetectrApp = petDetectrApp || {};
 petDetectrApp.formSetup = function formSetup(formName = 'report_form') {
     // Pet info
     this.petStatusInput = document[formName].status;
-    this.isChippedInput = document[formName].is_chipped;
+
+    // Toggle fields
+    this.toggleTriggerFields = document[formName].getElementsByClassName('js-field-toggle-trigger');
 
     // Required fields
     this.requiredFields = document[formName].getElementsByClassName('js-required-field');
@@ -11,10 +13,10 @@ petDetectrApp.formSetup = function formSetup(formName = 'report_form') {
 
     // Grab radio buttons and text nodes
     this.lastSeenText = document.querySelectorAll('.js-seen-found-text');
-    this.chipNumber = document.querySelector('#chip-number-wrap');
+
 
     this.addEventToNodes('click', this.petStatusInput, this.updateDateAndLocationText);
-    this.addEventToNodes('click', this.isChippedInput, this.hideShowChipNumber);
+    this.addEventToNodes('click', this.toggleTriggerFields, this.toggleFieldVisibility);
 
     // Basic required validation
     this.addEventToNodes('blur', this.requiredFields, this.validateRequired);
@@ -68,11 +70,12 @@ petDetectrApp.setHideShow = function showHideElement(target, display) {
 };
 
 // Chip number h-hide switching
-petDetectrApp.hideShowChipNumber = function hideShowChipNumber(e) {
-    const self = petDetectrApp;
-    const isChipped = e.target.value === 'chipped';
+petDetectrApp.toggleFieldVisibility = function toggleFieldVisibility(e) {
+    // get data attributes
+    const radioToggleTarget = document.getElementById(e.target.dataset.toggleTarget);
+    const radioToggleVisibility = e.target.dataset.toggleTargetVisibility;
 
-    self.setHideShow(self.chipNumber, isChipped);
+    petDetectrApp.setHideShow(radioToggleTarget, radioToggleVisibility);
 };
 
 petDetectrApp.formSetup();
