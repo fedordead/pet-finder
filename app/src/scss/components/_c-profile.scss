@@ -1,0 +1,85 @@
+/* ============================================================================
+   COMPONENTS -> PROFILE
+   ========================================================================= */
+
+
+/**
+ * A user profile component found within the main app header that comprises of
+ * the users full name, their avatar and an arrow to facilitate a dropdown.
+ * Dropdown styles can be found in dropDownMenu.scss.
+ */
+
+
+/**
+ * Settings.
+ */
+
+// Avatar
+$c-profile-avatar-size: 30;
+
+$c-profile-avatar-background-color: #d8e1ed;
+
+$c-profile-avatar-highlight-color: $g-color-brand;
+
+// Name
+$c-profile-name-color: $shell-g-color-white;
+
+$c-profile-name-max-width: 260;
+
+$c-profile-name-font-size: $shell-g-font-size;
+
+
+/**
+ * Base.
+ */
+
+.c-profile {
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+}
+
+
+/**
+ * Name.
+ */
+
+.c-profile__name {
+    color: $c-profile-name-color;
+    font-size: rem($c-profile-name-font-size);
+    font-weight: $shell-g-font-weight-normal;
+    max-width: rem($c-profile-name-max-width);
+    overflow: hidden;
+    padding: 0 rem($shell-g-spacing-small);
+    text-overflow: ellipsis;
+    transition: color 110ms;
+    white-space: nowrap;
+}
+
+
+/**
+ * Avatar.
+ */
+
+.c-profile__avatar {
+    background-color: $c-profile-avatar-background-color;
+    border-radius: 50%;
+    height: rem($c-profile-avatar-size);
+    overflow: hidden;
+    transition: box-shadow 0.15s;
+    width: rem($c-profile-avatar-size);
+}
+
+
+/**
+ * State: Hover, focused, dropdown visible.
+ */
+
+.c-profile.is-active,
+.c-profile:focus,
+.c-profile:hover {
+    .c-profile__avatar {
+        box-shadow: 0 0 0 2px $c-profile-avatar-highlight-color;
+    }
+}
+
