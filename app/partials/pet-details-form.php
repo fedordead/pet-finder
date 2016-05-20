@@ -205,13 +205,15 @@
     <legend class="h-spacing-small">Your contact details</legend>
 
     <p class="h-spacing-base">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" class="c-textual-input">
+        <label for="name" class="is-required">Name: <span class="h-hide-visually">(required)</span></label>
+        <input type="text" id="name" name="name" class="c-textual-input js-required-field">
+        <span class="c-message c-message--error h-hide js-error-message">We're gonna need your name I'm afraid, so people can contact you.</span>
     </p>
 
     <p class="h-spacing-base">
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" class="c-textual-input">
+        <label for="email" class="is-required">Email: <span class="h-hide-visually">(required)</span></label>
+        <input type="text" id="email" name="email" class="c-textual-input js-required-field">
+        <span class="c-message c-message--error h-hide js-error-message">Hook us up with your email dawg.  Just makes life easier for all parties.</span>
     </p>
 
     <p>

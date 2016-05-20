@@ -24,7 +24,7 @@
  * CONTENTS:
  *
  * 1. Colours
- * 2. Typography
+ * 2. Forms
  * 3. Shell overrides
  */
 
@@ -47,6 +47,12 @@ $g-color-blue-500: #19a9e5;
 $g-color-green-500: #4daf7c;
 
 $g-color-green-700: #019875;
+
+/**
+ * Red.
+ */
+
+$g-color-red-500: #d91e18;
 
 /**
  * Grey.
@@ -79,6 +85,14 @@ $g-color-brand: $g-color-blue-500;
 
 
 /**
+ * Validation.
+ */
+
+$g-color-error: $g-color-red-500;
+
+$g-color-success: $g-color-green-500;
+
+/**
  * Text.
  */
 
@@ -86,47 +100,19 @@ $g-color-brand: $g-color-blue-500;
 $g-color-text-base: $g-color-slate-700;
 
 
-/* 2. Typography
+
+
+/* 2. Forms
    ========================================================================= */
 
+label.is-required {
+    position: relative;
 
-
-
-
-
-/* 3. Layout
-   ========================================================================= */
-
-
-
-
-
-
-/* 4. Shell overrides
-   ========================================================================= */
-
-
-
-
-// /**
-//  * Colours (Global).
-//  */
-
-
-
-/**
- * Typography (Global).
- */
-
-
-
-
-/**
- * Base (Local).
- */
-
-// Links
-
+    &::after {
+        color: $g-color-error;
+        content: '*';
+    }
+}
 
 
 /**

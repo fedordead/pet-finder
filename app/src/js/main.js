@@ -2,29 +2,35 @@ const petDetectrApp = petDetectrApp || {};
 
 petDetectrApp.formSetup = function formSetup(formName = 'report_form') {
     // Pet info
-    this.petStatus = document[formName].status;
-    this.petName = document[formName].pet_name;
-    this.species = document[formName].species;
-    this.breed = document[formName].breed;
-    this.size = document[formName].size;
-    this.colour = document[formName].colour;
-    this.isChipped = document[formName].is_chipped;
-    this.chipNumber = document[formName].chip_number;
-    this.collar = document[formName].collar;
-    this.date = document[formName].date;
-    this.location = document[formName].location;
+    this.petStatusInput = document[formName].status;
+    this.isChippedInput = document[formName].is_chipped;
 
-    // Reporter info
-    this.name = document[formName].name;
-    this.email = document[formName].email;
-    this.phone = document[formName].phone;
+    // Required fields
+    this.requiredFields = document[formName].getElementsByClassName('js-required-field');
+
 
     // Grab radio buttons and text nodes
     this.lastSeenText = document.querySelectorAll('.js-seen-found-text');
     this.chipNumber = document.querySelector('#chip-number-wrap');
 
-    this.addEventToNodes('click', this.petStatus, this.updateDateAndLocationText);
-    this.addEventToNodes('click', this.isChipped, this.hideShowChipNumber);
+    this.addEventToNodes('click', this.petStatusInput, this.updateDateAndLocationText);
+    this.addEventToNodes('click', this.isChippedInput, this.hideShowChipNumber);
+
+    // Basic required validation
+    this.addEventToNodes('blur', this.requiredFields, this.validateRequired);
+    this.addEventToNodes('focus', this.requiredFields, this.clearValidationIndicators);
+};
+
+petDetectrApp.clearValidationIndicators = function clearValidationIndicators(e) {
+    e.target.classList.remove('is-invalid');
+    petDetectrApp.setHideShow(e.target.nextElementSibling, false);
+};
+
+petDetectrApp.validateRequired = function validateRequired(e) {
+    if (e.target.value === '') {
+        e.target.classList.add('is-invalid');
+        petDetectrApp.setHideShow(e.target.nextElementSibling, true);
+    }
 };
 
 petDetectrApp.updateDateAndLocationText = function updateDateAndLocationText(e) {
