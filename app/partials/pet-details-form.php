@@ -1,32 +1,36 @@
-<fieldset <?php if ($page != 'search') { echo 'class="h-spacing-large"'; } ?>>
+<fieldset <?php if ($page != 'index') { echo 'class="h-spacing-large"'; } ?>>
 
-    <legend class="h-spacing-small"><?php if ($page =='index') { echo 'Filters'; } else { echo 'Pet details'; } ?></legend>
+    <legend class="h-spacing-small"><?php if ($page == 'index') { echo 'Filters'; } else { echo 'Pet details'; } ?></legend>
+
+    <?php if ($page == 'index') { ?>
 
     <p class="h-spacing-tiny">Status:</p>
 
     <div class="c-radio-switch-container h-spacing-base">
-
-    <?php if ($page =='index') { ?>
 
         <p class="c-radio-switch">
             <input id="lost-found" type="radio" value="all" name="status" class="c-radio-switch__input" checked>
             <label for="lost-found" class="c-radio-switch__label">All</label>
         </p>
 
-    <?php } ?>
-    <?php if ($page =='lost' || $page =='index') { ?>
         <p class="c-radio-switch">
-            <input id="lost" type="radio" value="Lost" name="status" class="c-radio-switch__input"checked>
+            <input id="lost" type="radio" value="Lost" name="status" class="c-radio-switch__input">
             <label for="lost" class="c-radio-switch__label">Lost</label>
         </p>
-    <?php } ?>
-    <?php if ($page =='found' || $page =='index') { ?>
+
         <p class="c-radio-switch">
-            <input id="found" type="radio" value="Found" name="status" class="c-radio-switch__input" checked>
+            <input id="found" type="radio" value="Found" name="status" class="c-radio-switch__input">
             <label for="found" class="c-radio-switch__label">Found</label>
         </p>
-    <?php } ?>
+x
     </div>
+
+    <?php } ?>
+
+    <?php if ($page == 'lost' || $page == 'found') { ?>
+        <input type="hidden" name="status" value="<?php echo ucwords($page) ?>">
+    <?php } ?>
+
 
     <p class="h-spacing-base">
         <label for="pet-name">Pet's name:</label>
@@ -194,7 +198,7 @@
 
 </fieldset>
 
-<?php if ($page != 'search') { ?>
+<?php if ($page != 'index') { ?>
 
 <fieldset>
 
