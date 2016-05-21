@@ -4,11 +4,13 @@
   "version": "1.0.0",
   "scripts": {
     "compile-scss": "node-sass --output-style compressed -o app/assets/css app/src/scss/style.scss",
+    "transpile-js": "babel --presets es2015 app/src/js -d app/assets/js",
+    "minify-js": "uglifyjs app/assets/js/main.js -o app/assets/js/main.min.js && rm app/assets/js/main.js",
     "autoprefixer": "postcss -u autoprefixer -r app/assets/css/*",
     "watch:css": "onchange 'app/src/**.scss' -- npm run build:css",
     "watch:js": "onchange 'app/src/**.js' -- npm run build:js",
     "watch": "parallelshell 'npm run watch:css' 'npm run watch:js'",
-    "build:js": "babel --presets es2015 app/src/js -d app/assets/js",
+    "build:js": "npm run transpile-js && npm run minify-js",
     "build:css": "npm run compile-scss && npm run autoprefixer",
     "build": "npm run build:css && npm run build:js",
     "start": "npm run build && parallelshell 'npm run watch'"
@@ -29,6 +31,7 @@
     "parallelshell": "^2.0.0",
     "postcss-cli": "^2.5.1",
     "shell-csslib": "^0.10.0",
-    "stylelint": "^6.3.3"
+    "stylelint": "^6.3.3",
+    "uglify-js": "^2.6.2"
   }
 }
