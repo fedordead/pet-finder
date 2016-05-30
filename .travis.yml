@@ -1,0 +1,9 @@
+language: php
+
+php:
+
+- stable
+
+install:
+
+- npm install
