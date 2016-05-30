@@ -80,31 +80,32 @@ petDetectrApp.toggleFieldVisibility = function toggleFieldVisibility(e) {
 
 
 petDetectrApp.fileUpload = () => {
-
     // grab image placeholder and file input
-    const image_preview = document.getElementById('pet_photo');
-    const image_input   = document.getElementById('pet_photo_upload');
+    const imagePreview = document.getElementById('pet_photo');
+    const imageInput = document.getElementById('pet_photo_upload');
     const spinner = document.getElementById('spinner');
 
-    image_input.addEventListener('change', () => {
-
-        const file   = image_input.files[0];
+    imageInput.addEventListener('change', () => {
+        const file = imageInput.files[0];
         // use FileReader API - IE10+ only
         const reader = new FileReader();
 
         spinner.classList.remove('h-hide');
 
         reader.onloadend = () => {
-            image_preview.src = reader.result;
+            imagePreview.src = reader.result;
             spinner.classList.add('h-hide');
+        };
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            imagePreview.src = '';
         }
 
-        file ? reader.readAsDataURL(file) : image_preview.src = '';
-
-        image_preview.classList.remove('h-hide');
-
+        imagePreview.classList.remove('h-hide');
     });
-}
+};
 
 petDetectrApp.formSetup();
 petDetectrApp.fileUpload();
