@@ -6,7 +6,7 @@
 
     <p class="h-spacing-tiny">Status:</p>
 
-    <div class="c-radio-switch-container h-spacing-base">
+    <div class="c-radio-switch-container h-spacing">
 
         <p class="c-radio-switch">
             <input id="lost-found" type="radio" value="all" name="status" class="c-radio-switch__input" checked>
@@ -32,12 +32,12 @@
     <?php } ?>
 
 
-    <p class="h-spacing-base">
+    <p class="h-spacing">
         <label for="pet-name">Pet's name:</label>
         <input type="text" id="pet-name" name="pet_name" class="c-textual-input">
     </p>
 
-    <p class="h-spacing-base">
+    <p class="h-spacing">
         <label for="species">Species:</label>
         <span class="c-form-select">
             <select id="species" class="c-form-select__select" name="species">
@@ -57,7 +57,7 @@
         </span>
     </p>
 
-    <p class="h-spacing-base">
+    <p class="h-spacing">
         <label for="breed">Breed:</label>
         <span class="c-form-select">
             <select id="breed" class="c-form-select__select" name="breed">
@@ -77,7 +77,7 @@
         </span>
     </p>
 
-    <p class="h-spacing-base">
+    <p class="h-spacing">
         <label for="size">Size:</label>
         <span class="c-form-select">
             <select id="size" class="c-form-select__select" name="size">
@@ -98,7 +98,7 @@
         </span>
     </p>
 
-    <p class="h-spacing-base">
+    <p class="h-spacing">
         <label for="colour">Colour:</label>
         <span class="c-form-select">
             <select id="colour" class="c-form-select__select" name="colour">
@@ -121,7 +121,7 @@
 
     <p class="h-spacing-tiny">Chipped:</p>
 
-    <div class="c-radio-switch-container h-spacing-base">
+    <div class="c-radio-switch-container h-spacing">
 
     <?php if ($page =='index') { ?>
 
@@ -143,12 +143,12 @@
         </p>
     </div>
 
-    <p id="chip-number-wrap" class="h-spacing-base h-hide js-field-toggle-target">
+    <p id="chip-number-wrap" class="h-spacing h-hide js-field-toggle-target">
         <label for="chip-number">Chip number:</label>
         <input type="text" id="chip-number" name="chip_number" class="c-textual-input">
     </p>
 
-    <p class="h-spacing-base">
+    <p class="h-spacing">
         <label for="collar">Collar:</label>
         <span class="c-form-select">
             <select id="collar" class="c-form-select__select" name="collar">
@@ -169,12 +169,12 @@
         </span>
     </p>
 
-    <p class="h-spacing-base">
+    <p class="h-spacing">
         <label for="date">Date <span class="js-seen-found-text">last seen</span>:</label>
         <input type="date" id="date" class="c-textual-input" name="date">
     </p>
 
-    <p class="h-spacing-base">
+    <p class="h-spacing">
         <label for="location">Location <span class="js-seen-found-text">last seen</span>:</label>
         <span class="c-form-select">
             <select id="location" class="c-form-select__select" name=
@@ -204,13 +204,13 @@
 
     <legend class="h-spacing-small">Your contact details</legend>
 
-    <p class="h-spacing-base">
+    <p class="h-spacing">
         <label for="name" class="is-required">Name: <span class="h-hide-visually">(required)</span></label>
         <input type="text" id="name" name="name" class="c-textual-input js-required-field">
         <span class="c-message c-message--error h-hide js-error-message">We're gonna need your name I'm afraid, so people can contact you.</span>
     </p>
 
-    <p class="h-spacing-base">
+    <p class="h-spacing">
         <label for="email" class="is-required">Email: <span class="h-hide-visually">(required)</span></label>
         <input type="text" id="email" name="email" class="c-textual-input js-required-field">
         <span class="c-message c-message--error h-hide js-error-message">Hook us up with your email dawg.  Just makes life easier for all parties.</span>

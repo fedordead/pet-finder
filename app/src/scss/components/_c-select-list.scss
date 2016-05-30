@@ -37,7 +37,7 @@
     display: block; /* [3] */
     font-size: rem($shell-g-font-size-large); /* [4] */
     padding-bottom: rem($shell-g-spacing-x-small); /* [4] */
-    padding-left: rem($shell-g-spacing-base); /* [4] */
+    padding-left: rem($shell-g-spacing); /* [4] */
     padding-right: rem($shell-g-spacing-x-large); /* [4a]
     padding-top: rem($shell-g-spacing-x-small); /* [4] */
     width: 100%; /* [3] */
@@ -58,7 +58,7 @@
     height: rem(7);
     pointer-events: none;
     position: absolute;
-    right: rem($shell-g-spacing-base);
+    right: rem($shell-g-spacing);
     top: 50%;
     transform: translateY(-50%);
     width: rem(16);
