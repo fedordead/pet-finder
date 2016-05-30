@@ -13,7 +13,8 @@
     "build:js": "npm run transpile-js && npm run minify-js",
     "build:css": "npm run compile-scss && npm run autoprefixer",
     "build": "npm run build:css && npm run build:js",
-    "start": "npm run build && parallelshell 'npm run watch'"
+    "start": "npm run build && parallelshell 'npm run watch'",
+    "lint": "stylelint 'app/src/scss/**/**.scss'"
   },
   "repository": {
     "type": "git",

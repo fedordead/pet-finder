@@ -21,7 +21,7 @@ $c-card-background-color: $g-color-grey-100;
     color: $g-color-text-base;
     display: block;
     position: relative;
-    text-decoration: none; // [1]
+    text-decoration: none; /* [1] */
 
     &:hover {
         box-shadow: 0 3px 0 rgba($g-color-brand, 0.3);
@@ -37,8 +37,3 @@ $c-card-background-color: $g-color-grey-100;
 .c-card__body {
     padding: rem($shell-g-spacing-small);
 }
-
-
-
-
-
