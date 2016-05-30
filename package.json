@@ -30,7 +30,7 @@
     "onchange": "^2.2.0",
     "parallelshell": "^2.0.0",
     "postcss-cli": "^2.5.1",
-    "shell-csslib": "^0.10.0",
+    "shell-csslib": "^1.0.0",
     "stylelint": "^6.3.3",
     "uglify-js": "^2.6.2"
   }
