@@ -1,6 +1,6 @@
 <main class="l-main" role="main">
 
-    <h2 class="heading heading--main h-spacing">Reports</h2>
+    <h2 class="heading-headline h-spacing">Reports</h2>
 
     <ul class="l-grid">
 
@@ -22,7 +22,7 @@
     ?>
     </ul>
 
-    <h2 class="heading heading--main h-spacing">Account Information</h2>
+    <h2 class="heading-headline h-spacing">Account Information</h2>
 
 
 

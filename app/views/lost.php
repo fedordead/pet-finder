@@ -1,6 +1,6 @@
 <main class="l-main" role="main">
 
-    <h2 class="heading heading--main h-spacing">Lost</h2>
+    <h2 class="heading-headline h-spacing">Lost</h2>
 
     <form method="POST" action="/new-pet" name="report_form">
 

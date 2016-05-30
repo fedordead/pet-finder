@@ -2,7 +2,7 @@
 <a class="c-card" href="/pet/<?php echo substr($key, 1); ?>">
 
     <div class="c-card__header">
-        <h3 class="heading heading--main"><?php print_tag($post->name, 'Pet Name'); ?></h3>
+        <h3 class="heading-headline"><?php print_tag($post->name, 'Pet Name'); ?></h3>
     </div>
 
     <div class="c-card__body">

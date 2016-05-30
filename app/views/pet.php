@@ -9,7 +9,7 @@
 
     ?>
 
-        <h2 class="heading heading--main h-spacing"><?php print_tag($pet->status, 'Lost:'); ?> <?php print_tag($pet->name, 'Catty McCatface'); ?></h2>
+        <h2 class="heading-headline h-spacing"><?php print_tag($pet->status, 'Lost:'); ?> <?php print_tag($pet->name, 'Catty McCatface'); ?></h2>
 
         <img class="h-spacing" src="http://placekitten.com/200/300" alt="Place Kitten" />
 
@@ -46,7 +46,7 @@
 
         <?php } else { ?>
 
-            <h2 class="heading heading--main h-spacing">Awkward...</h2>
+            <h2 class="heading-headline h-spacing">Awkward...</h2>
 
             <p>Seems we've lost this pet from our records.  Double lost :S</p>
 
