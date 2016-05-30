@@ -29,7 +29,7 @@ $c-nav-link-current-underline-color: $g-color-brand;
 .c-nav__link {
     color: $shell-g-color-white;
     display: block;
-    padding: rem($shell-g-spacing-base) rem($shell-g-spacing-large);
+    padding: rem($shell-g-spacing) rem($shell-g-spacing-large);
     position: relative;
     text-align: center;
     text-decoration: none;

@@ -12,7 +12,8 @@
     border: 1px solid $g-color-slate-400;
     border-radius: $g-border-radius;
     display: block;
-    // So we can position the SVG icon
+
+    /* So we can position the SVG icon */
     position: relative;
 }
 
@@ -29,20 +30,20 @@
  */
 
 .c-form-select__select {
-    appearance: none; // [1]
-    background: none; // [1]
-    border: 0; // [1]
-    cursor: pointer; // [2]
-    display: block; // [3]
-    font-size: rem($shell-g-font-size-large); // [4]
-    padding-bottom: rem($shell-g-spacing-x-small); // [4]
-    padding-left: rem($shell-g-spacing-base); // [4]
-    padding-right: rem($shell-g-spacing-x-large); // [4a]
-    padding-top: rem($shell-g-spacing-x-small); // [4]
-    width: 100%; // [3]
+    appearance: none; /* [1] */
+    background: none; /* [1] */
+    border: 0; /* [1] */
+    cursor: pointer; /* [2] */
+    display: block; /* [3] */
+    font-size: rem($shell-g-font-size-large); /* [4] */
+    padding-bottom: rem($shell-g-spacing-x-small); /* [4] */
+    padding-left: rem($shell-g-spacing); /* [4] */
+    padding-right: rem($shell-g-spacing-x-large); /* [4a] */
+    padding-top: rem($shell-g-spacing-x-small); /* [4] */
+    width: 100%; /* [3] */
 }
 
-// Hide the arrow in IE 10
+/* Hide the arrow in IE 10 */
 .c-form-select__select::-ms-expand {
     display: none;
 }
@@ -57,7 +58,7 @@
     height: rem(7);
     pointer-events: none;
     position: absolute;
-    right: rem($shell-g-spacing-base);
+    right: rem($shell-g-spacing);
     top: 50%;
     transform: translateY(-50%);
     width: rem(16);

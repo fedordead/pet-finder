@@ -20,7 +20,7 @@
 
         <main class="l-main" role="main">
 
-            <h2 class="heading heading--main h-spacing-base">Pets</h2>
+            <h2 class="heading heading--main h-spacing">Pets</h2>
 
             <ul class="l-grid">
 
