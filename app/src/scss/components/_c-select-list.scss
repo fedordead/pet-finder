@@ -27,6 +27,7 @@
  * 4.   The only visual styles we apply, the rest go on the parent `<span>`
  *      element.
  * 4a.  Needs to be bigger to make room for the SVG icon.
+ * 5.   Fixed height as browsers render it strangely
  */
 
 .c-form-select__select {
@@ -36,6 +37,7 @@
     cursor: pointer; /* [2] */
     display: block; /* [3] */
     font-size: rem($shell-g-font-size-large); /* [4] */
+    height: rem(40); /* [5] */
     padding-bottom: rem($shell-g-spacing-x-small); /* [4] */
     padding-left: rem($shell-g-spacing); /* [4] */
     padding-right: rem($shell-g-spacing-x-large); /* [4a] */
