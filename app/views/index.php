@@ -1,7 +1,7 @@
 
-<div class="l-side-by-side l-side-by-side--gutterless">
+<div class="l-grid l-grid--gutterless">
 
-    <aside class="l-side-by-side__item">
+    <aside class="l-grid__item">
 
         <div class="l-sidebar">
 
@@ -16,7 +16,7 @@
         </div>
     </aside>
 
-    <div class="l-side-by-side__item">
+    <div class="l-grid__item">
 
         <main class="l-main" role="main">
 
@@ -45,6 +45,6 @@
         </main>
 
     </div>
-    <!-- .l-side-by-side__item -->
+    <!-- .l-grid__item -->
 </div>
-<!-- .l-side-by-side -->
+<!-- .l-grid -->
