@@ -39,7 +39,7 @@
         <input type="text" id="pet-name" name="pet_name" class="c-textual-input">
     </p>
 
-
+    <?php if ($page != 'index') { ?>
     <div class="h-spacing">
         <p>Photo: </p>
 
@@ -55,6 +55,7 @@
             </label>
         </p>
     </div>
+    <?php } ?>
 
     <p class="h-spacing">
         <label for="species">Species:</label>

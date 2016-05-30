@@ -78,4 +78,31 @@ petDetectrApp.toggleFieldVisibility = function toggleFieldVisibility(e) {
     petDetectrApp.setHideShow(radioToggleTarget, radioToggleVisibility);
 };
 
+
+petDetectrApp.fileUpload = () => {
+
+    // set up vars for dom nodes to be changed
+    const input   = document.getElementById('jsonResponseFile');
+    const form    = document.getElementById('upload_form');
+    const title   = document.getElementById('form_title');
+    const label   = document.getElementById('label_text');
+    const spinner = document.getElementById('spinner');
+
+    input.addEventListener('change', function(e)
+    {
+        // retrieve filename of selected file
+        var fileName = e.target.value.split( '\\' ).pop();
+
+        // update dom elements with loading state
+        label.innerHTML = fileName;
+        spinner.classList.remove('h-hide');
+        choose_file.classList.add('h-hide');
+        form_title.innerHTML = 'Uploading…';
+
+    });
+
+
+}
+
 petDetectrApp.formSetup();
+petDetectrApp.fileUpload();
