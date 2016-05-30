@@ -3,6 +3,26 @@
    ========================================================================= */
 
 /**
+ * Text.
+ */
+
+.c-file-upload__text + .c-spinner:not(.h-hide) {
+    margin-left: rem($shell-g-spacing-x-small);
+}
+
+
+/**
+ * Image.
+ */
+
+.c-file-upload__image {
+    display: block;
+    margin-bottom: rem($shell-g-spacing-small);
+    max-width: rem(200);
+}
+
+
+/**
  * Icon.
  */
 

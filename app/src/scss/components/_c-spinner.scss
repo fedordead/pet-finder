@@ -1,0 +1,43 @@
+/* ============================================================================
+   COMPONENTS -> SPINNER
+   ========================================================================= */
+
+
+/**
+ * Settings.
+ */
+
+$c-spinner-size: 30;
+
+$c-spinner-active-color: $g-color-green-700;
+
+$c-spinner-inactive-color: $g-color-grey-50;
+
+
+/**
+ * Base.
+ */
+
+.c-spinner {
+    animation: circle infinite 0.75s linear;
+    border: 4px solid rgba($c-spinner-inactive-color, 0.5);
+    border-left-color: $c-spinner-active-color;
+    border-radius: 50%;
+    height: rem($c-spinner-size);
+    width: rem($c-spinner-size);
+}
+
+
+/**
+ * Animation.
+ */
+
+@keyframes circle {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

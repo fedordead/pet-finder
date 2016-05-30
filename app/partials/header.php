@@ -38,7 +38,7 @@
 
                 <nav role="navigation">
                     <ul class="c-nav">
-                        <li class="c-nav__item <?php if ($page == 'search') echo 'is-current'; ?>">
+                        <li class="c-nav__item <?php if ($page == 'index') echo 'is-current'; ?>">
                             <a class="c-nav__link" href="/">Search Database</a>
                         </li>
                         <li class="c-nav__item <?php if ($page == 'lost') echo 'is-current'; ?>">

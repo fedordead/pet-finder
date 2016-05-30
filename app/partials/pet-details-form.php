@@ -43,17 +43,23 @@
     <div class="h-spacing">
         <p>Photo: </p>
 
-        <p class="c-file-upload">
-            <input id="pet_photo" class="c-file-upload__input h-hide-visually" type="file", name="pet_photo">
+        <div class="c-file-upload">
 
-            <label for="pet_photo" class="c-button">
+            <img id="pet_photo" src="" alt="Pet image" class="c-file-upload__image h-hide">
+
+            <input id="pet_photo_upload" class="c-file-upload__input h-hide-visually" type="file", name="pet_photo_upload">
+
+            <label for="pet_photo_upload" class="c-button">
 
                 <svg class="c-file-upload__icon" height="25" width="33">
                     <use xlink:href="#camera-plus-icon" />
                 </svg>
-             Choose image
+
+                <span class="c-file-upload__text">Choose image</span>
+
+                <span id="spinner" class="c-spinner h-hide"></span>
             </label>
-        </p>
+        </div>
     </div>
     <?php } ?>
 
