@@ -4,26 +4,28 @@
 
     <?php if ($page == 'index') { ?>
 
-    <p class="h-spacing-tiny">Status:</p>
+    <fieldset>
+        <legend class="h-spacing-tiny">Status:</legend>
 
-    <div class="c-radio-switch-container h-spacing">
+        <div class="c-radio-switch-container h-spacing">
 
-        <p class="c-radio-switch">
-            <input id="lost-found" type="radio" value="all" name="status" class="c-radio-switch__input" checked>
-            <label for="lost-found" class="c-radio-switch__label">All</label>
-        </p>
+            <p class="c-radio-switch">
+                <input id="lost-found" type="radio" value="all" name="status" class="c-radio-switch__input" checked>
+                <label for="lost-found" class="c-radio-switch__label">All</label>
+            </p>
 
-        <p class="c-radio-switch">
-            <input id="lost" type="radio" value="Lost" name="status" class="c-radio-switch__input">
-            <label for="lost" class="c-radio-switch__label">Lost</label>
-        </p>
+            <p class="c-radio-switch">
+                <input id="lost" type="radio" value="Lost" name="status" class="c-radio-switch__input">
+                <label for="lost" class="c-radio-switch__label">Lost</label>
+            </p>
 
-        <p class="c-radio-switch">
-            <input id="found" type="radio" value="Found" name="status" class="c-radio-switch__input">
-            <label for="found" class="c-radio-switch__label">Found</label>
-        </p>
+            <p class="c-radio-switch">
+                <input id="found" type="radio" value="Found" name="status" class="c-radio-switch__input">
+                <label for="found" class="c-radio-switch__label">Found</label>
+            </p>
 
-    </div>
+        </div>
+    </fieldset>
 
     <?php } ?>
 
@@ -36,6 +38,23 @@
         <label for="pet-name">Pet's name:</label>
         <input type="text" id="pet-name" name="pet_name" class="c-textual-input">
     </p>
+
+
+    <div class="h-spacing">
+        <p>Photo: </p>
+
+        <p class="c-file-upload">
+            <input id="pet_photo" class="c-file-upload__input h-hide-visually" type="file", name="pet_photo">
+
+            <label for="pet_photo" class="c-button">
+
+                <svg class="c-file-upload__icon" height="25" width="33">
+                    <use xlink:href="#camera-plus-icon" />
+                </svg>
+             Choose image
+            </label>
+        </p>
+    </div>
 
     <p class="h-spacing">
         <label for="species">Species:</label>
