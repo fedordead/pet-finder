@@ -47,7 +47,7 @@
 
             <img id="pet_photo" src="" alt="Pet image" class="c-file-upload__image h-hide">
 
-            <input id="pet_photo_upload" class="c-file-upload__input h-hide-visually" type="file", name="pet_photo_upload">
+            <input id="pet_photo_upload" class="c-file-upload__input h-hide-visually" type="file" name="pet_photo_upload">
 
             <label for="pet_photo_upload" class="c-button">
 
