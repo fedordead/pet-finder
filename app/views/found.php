@@ -1,6 +1,6 @@
 <main class="l-main" role="main">
 
-    <h2 class="heading heading--main h-spacing">Found</h2>
+    <h2 class="heading-headline h-spacing">Found</h2>
 
     <p class="h-spacing-small">Add details of the pet you've found below:</p>
 

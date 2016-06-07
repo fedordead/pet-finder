@@ -78,4 +78,35 @@ petDetectrApp.toggleFieldVisibility = function toggleFieldVisibility(e) {
     petDetectrApp.setHideShow(radioToggleTarget, radioToggleVisibility);
 };
 
+
+petDetectrApp.fileUpload = () => {
+    // grab image placeholder and file input
+    const imagePreview = document.getElementById('pet_photo');
+    const imageInput = document.getElementById('pet_photo_upload');
+    const spinner = document.getElementById('spinner');
+
+    imageInput.addEventListener('change', () => {
+        const file = imageInput.files[0];
+        // use FileReader API - IE10+ only
+        const reader = new FileReader();
+
+        spinner.classList.remove('h-hide');
+
+        reader.onloadend = () => {
+            imagePreview.src = reader.result;
+            spinner.classList.add('h-hide');
+        };
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            imagePreview.src = '';
+        }
+
+        imagePreview.classList.remove('h-hide');
+    });
+};
+
 petDetectrApp.formSetup();
+petDetectrApp.fileUpload();
+
