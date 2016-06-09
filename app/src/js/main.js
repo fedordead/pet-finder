@@ -1,3 +1,5 @@
+import V from './lib.js';
+
 const petDetectrApp = petDetectrApp || {};
 
 petDetectrApp.formSetup = function formSetup(formName = 'report_form') {
@@ -5,37 +7,35 @@ petDetectrApp.formSetup = function formSetup(formName = 'report_form') {
     this.petStatusInput = document[formName].status;
 
     // Toggle fields
-    this.toggleTriggerFields = document[formName].getElementsByClassName('js-field-toggle-trigger');
+    this.toggleTriggerFields = V.getFields(formName, 'js-field-toggle-trigger');
 
     // Required fields
-    this.requiredFields = document[formName].getElementsByClassName('js-required-field');
-
+    this.requiredFields = V.getFields(formName, 'js-required-field');
 
     // Grab radio buttons and text nodes
-    this.lastSeenText = document.querySelectorAll('.js-seen-found-text');
+    this.lastSeenText = V.klass('.js-seen-found-text');
 
-
-    this.addEventToNodes('click', this.petStatusInput, this.updateDateAndLocationText);
-    this.addEventToNodes('click', this.toggleTriggerFields, this.toggleFieldVisibility);
+    V.addEventToNodes('click', this.petStatusInput, this.updateDateAndLocationText);
+    V.addEventToNodes('click', this.toggleTriggerFields, this.toggleFieldVisibility);
 
     // Basic required validation
-    this.addEventToNodes('blur', this.requiredFields, this.validateRequired);
-    this.addEventToNodes('focus', this.requiredFields, this.clearValidationIndicators);
+    V.addEventToNodes('blur', this.requiredFields, this.validateRequired);
+    V.addEventToNodes('focus', this.requiredFields, this.clearValidationIndicators);
 };
 
-petDetectrApp.clearValidationIndicators = function clearValidationIndicators(e) {
-    e.target.classList.remove('is-invalid');
-    petDetectrApp.setHideShow(e.target.nextElementSibling, false);
+petDetectrApp.clearValidationIndicators = e => {
+    V.removeClass(e.target, 'is-invalid');
+    V.setHideShow(e.target.nextElementSibling, false);
 };
 
-petDetectrApp.validateRequired = function validateRequired(e) {
+petDetectrApp.validateRequired = e => {
     if (e.target.value === '') {
-        e.target.classList.add('is-invalid');
-        petDetectrApp.setHideShow(e.target.nextElementSibling, true);
+        V.addClass(e.target, 'is-invalid');
+        V.setHideShow(e.target.nextElementSibling, true);
     }
 };
 
-petDetectrApp.updateDateAndLocationText = function updateDateAndLocationText(e) {
+petDetectrApp.updateDateAndLocationText = e => {
     const currentStatus = e.target.value;
     let lastSeenValue = '';
 
@@ -53,48 +53,33 @@ petDetectrApp.updateDateAndLocationText = function updateDateAndLocationText(e) 
     }
 };
 
-// Add listener to nodes
-petDetectrApp.addEventToNodes = function addEventToNodes(evt, nodes, func) {
-    for (let i = 0; i < nodes.length; i++) {
-        nodes[i].addEventListener(evt, func, true);
-    }
-};
-
-// Set the use of h-hide class on target
-petDetectrApp.setHideShow = function showHideElement(target, display) {
-    if (display) {
-        target.classList.remove('h-hide');
-    } else {
-        target.classList.add('h-hide');
-    }
-};
 
 // Chip number h-hide switching
-petDetectrApp.toggleFieldVisibility = function toggleFieldVisibility(e) {
+petDetectrApp.toggleFieldVisibility = e => {
     // get data attributes
-    const radioToggleTarget = document.getElementById(e.target.dataset.toggleTarget);
-    const radioToggleVisibility = e.target.dataset.toggleTargetVisibility;
+    const radioToggleTargetElement = V.id(e.target.dataset.toggleTarget);
+    const radioToggleBoolean = e.target.dataset.toggleTargetVisibility;
 
-    petDetectrApp.setHideShow(radioToggleTarget, radioToggleVisibility);
+    V.setHideShow(radioToggleTargetElement, radioToggleBoolean);
 };
 
 
 petDetectrApp.fileUpload = () => {
     // grab image placeholder and file input
-    const imagePreview = document.getElementById('pet_photo');
-    const imageInput = document.getElementById('pet_photo_upload');
-    const spinner = document.getElementById('spinner');
+    const imagePreview = V.id('pet_photo');
+    const imageInput = V.id('pet_photo_upload');
+    const spinner = V.id('spinner');
 
     imageInput.addEventListener('change', () => {
         const file = imageInput.files[0];
         // use FileReader API - IE10+ only
         const reader = new FileReader();
 
-        spinner.classList.remove('h-hide');
+        V.removeClass(spinner, 'h-hide');
 
         reader.onloadend = () => {
             imagePreview.src = reader.result;
-            spinner.classList.add('h-hide');
+            V.addClass(spinner, 'h-hide');
         };
 
         if (file) {
@@ -103,7 +88,7 @@ petDetectrApp.fileUpload = () => {
             imagePreview.src = '';
         }
 
-        imagePreview.classList.remove('h-hide');
+        V.removeClass(imagePreview, 'h-hide');
     });
 };
 
