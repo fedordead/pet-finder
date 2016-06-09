@@ -1,3 +1,9 @@
+<?php
+$species = array(
+        array('id' => '1', 'breeds_id' => 1, 'value' => 'cat', 'displayValue' => 'Cat'),
+        array('id' => '2', 'breeds_id' => 2, 'value' => 'dog', 'displayValue' => 'Dog')
+        ); ?>
+
 <fieldset <?php if ($page != 'index') { echo 'class="h-spacing-large"'; } ?>>
 
     <legend class="h-spacing-small"><?php if ($page == 'index') { echo 'Filters'; } else { echo 'Pet details'; } ?></legend>
@@ -72,10 +78,17 @@
                     <option value="all">Show all</option>
                     <?php } else { ?>
                     <option selected="selected" disabled>Please select</option>
-                <?php } ?>
+                <?php }
 
-                <option value="cat">Cat</option>
-                <option value="dog">Dog</option>
+                // if ($species){
+
+                //     foreach ($species => $key as $s) {
+                // ?>
+                //     <option value="<?php print_tag($s->value); ?>"><?php echo $s ?><?php echo $key ?><?php print_tag($s->displayValue); ?></option>
+                // <?php
+                //     }
+                // }
+                ?>
             </select>
             <svg class="c-form-select__icon">
                 <use xlink:href="#caret-icon" />

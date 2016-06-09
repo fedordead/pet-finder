@@ -1,12 +1,12 @@
 const V = {
+
+    // Element Selectors
     id: el => document.getElementById(el),
-
     klass: el => document.getElementsByClassName(el),
-
     q: el => document.querySelector(el),
-
     qa: el => document.querySelectorAll(el),
 
+    // Class manipulation
     removeClass: (el, className) => {
         el.classList.remove(className);
     },
