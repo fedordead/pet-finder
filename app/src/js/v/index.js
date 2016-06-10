@@ -2,6 +2,7 @@ import addClass from './addClass/index';
 import addEventToNodes from './addEventToNodes/index';
 import checkSupport from './checkSupport/index';
 import defaults from './defaults/index';
+import each from './each/index';
 import getFields from './getFields/index';
 import hide from './hide/index';
 import id from './id/index';
@@ -18,6 +19,7 @@ const V = {
     addEventToNodes,
     checkSupport,
     defaults,
+    each,
     getFields,
     hide,
     id,
@@ -35,6 +37,7 @@ export {
     addEventToNodes,
     checkSupport,
     defaults,
+    each,
     getFields,
     hide,
     id,
