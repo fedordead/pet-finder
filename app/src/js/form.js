@@ -1,4 +1,4 @@
-import V from './lib.js';
+import V from './v/index.js';
 
 function toggleFieldVisibility(e) {
     // get data attributes
