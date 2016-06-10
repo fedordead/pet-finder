@@ -1,4 +1,4 @@
-import { addClass, removeClass, id } from './v';
+import { hide, show, id } from './v';
 
 function init() {
     // grab image placeholder and file input
@@ -12,11 +12,11 @@ function init() {
         // use FileReader API - IE10+ only
         const reader = new FileReader();
 
-        removeClass(spinner, 'h-hide');
+        show(spinner);
 
         reader.onloadend = () => {
             imagePreview.src = reader.result;
-            addClass(spinner, 'h-hide');
+            hide(spinner);
         };
 
         if (file) {
@@ -25,7 +25,7 @@ function init() {
             imagePreview.src = '';
         }
 
-        removeClass(imagePreview, 'h-hide');
+        show(imagePreview);
     });
 }
 

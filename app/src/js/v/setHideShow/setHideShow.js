@@ -1,11 +1,12 @@
-import addClass from '../addClass/addClass';
-import removeClass from '../removeClass/removeClass';
+import addClass from '../addClass/index.js';
+import removeClass from '../removeClass/index.js';
+import defaults from '../defaults/index.js';
 
-const setHideShow = (el, displayBoolean) => {
+const setHideShow = (el, displayBoolean, className = defaults.hideClassName) => {
     if (displayBoolean) {
-        removeClass(el, 'h-hide');
+        removeClass(el, className);
     } else {
-        addClass(el, 'h-hide');
+        addClass(el, className);
     }
 };
 
