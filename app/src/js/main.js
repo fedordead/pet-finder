@@ -1,6 +1,6 @@
-import formSetup from './form.js';
-import fileUpload from './file-upload.js';
-import validation from './validation.js';
+import formSetup from './form';
+import fileUpload from './file-upload';
+import validation from './validation';
 
 formSetup.init();
 fileUpload.init();
