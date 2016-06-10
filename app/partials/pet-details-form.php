@@ -246,13 +246,13 @@ $species = array(
     <p class="h-spacing">
         <label for="name" class="is-required">Name: <span class="h-hide-visually">(required)</span></label>
         <input type="text" id="name" name="name" class="c-textual-input js-required-field">
-        <span class="c-message c-message--error h-hide js-error-message">We're gonna need your name I'm afraid, so people can contact you.</span>
+        <span class="c-message c-message--error js-error-message" style="display: none;">We're gonna need your name I'm afraid, so people can contact you.</span>
     </p>
 
     <p class="h-spacing">
         <label for="email" class="is-required">Email: <span class="h-hide-visually">(required)</span></label>
         <input type="text" id="email" name="email" class="c-textual-input js-required-field">
-        <span class="c-message c-message--error h-hide js-error-message">Hook us up with your email dawg.  Just makes life easier for all parties.</span>
+        <span class="c-message c-message--error js-error-message" style="display: none;">Hook us up with your email dawg.  Just makes life easier for all parties.</span>
     </p>
 
     <p>

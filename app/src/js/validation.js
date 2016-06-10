@@ -2,13 +2,13 @@ import { addClass, getFields, addEventToNodes, removeClass, setTargetDisplay } f
 
 function clearValidationIndicators(e) {
     removeClass(e.target, 'is-invalid');
-    setTargetDisplay(e.target.nextElementSibling, false);
+    setTargetDisplay(e.target.nextElementSibling, 'none');
 }
 
 function validateRequired(e) {
     if (e.target.value === '') {
         addClass(e.target, 'is-invalid');
-        setTargetDisplay(e.target.nextElementSibling, true);
+        setTargetDisplay(e.target.nextElementSibling, 'block');
     }
 }
 
