@@ -1,21 +1,22 @@
-import addClass from './addClass';
-import addEventToNodes from './addEventToNodes';
-import defaults from './defaults';
-import getFields from './getFields';
-import hide from './hide';
-import id from './id';
-import klass from './klass';
-import nodeListToArray from './nodeListToArray';
-import q from './q';
-import qa from './qa';
-import removeClass from './removeClass';
-import setHideShow from './setHideShow';
-import show from './show';
-
+import addClass from './addClass/index';
+import addEventToNodes from './addEventToNodes/index';
+import checkSupport from './checkSupport/index';
+import defaults from './defaults/index';
+import getFields from './getFields/index';
+import hide from './hide/index';
+import id from './id/index';
+import klass from './klass/index';
+import nodeListToArray from './nodeListToArray/index';
+import q from './q/index';
+import qa from './qa/index';
+import removeClass from './removeClass/index';
+import setHideShow from './setHideShow/index';
+import show from './show/index';
 
 const V = {
     addClass,
     addEventToNodes,
+    checkSupport,
     defaults,
     getFields,
     hide,
@@ -32,6 +33,7 @@ const V = {
 export {
     addClass,
     addEventToNodes,
+    checkSupport,
     defaults,
     getFields,
     hide,

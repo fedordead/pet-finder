@@ -1,4 +1,4 @@
-import { hide, show, id } from './v';
+import { hide, show, id } from './v/index';
 
 function init() {
     // grab image placeholder and file input

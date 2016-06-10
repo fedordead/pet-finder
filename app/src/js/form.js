@@ -1,4 +1,4 @@
-import { addEventToNodes, id, setHideShow, getFields, klass } from './v';
+import { addEventToNodes, id, setHideShow, getFields, klass } from './v/index';
 
 function toggleFieldVisibility(e) {
     // get data attributes
