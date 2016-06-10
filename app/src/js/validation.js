@@ -1,14 +1,14 @@
-import { addClass, getFields, addEventToNodes, removeClass, setHideShow } from './v/index';
+import { addClass, getFields, addEventToNodes, removeClass, setTargetDisplay } from './v/index';
 
 function clearValidationIndicators(e) {
     removeClass(e.target, 'is-invalid');
-    setHideShow(e.target.nextElementSibling, false);
+    setTargetDisplay(e.target.nextElementSibling, false);
 }
 
 function validateRequired(e) {
     if (e.target.value === '') {
         addClass(e.target, 'is-invalid');
-        setHideShow(e.target.nextElementSibling, true);
+        setTargetDisplay(e.target.nextElementSibling, true);
     }
 }
 

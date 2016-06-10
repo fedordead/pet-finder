@@ -165,24 +165,24 @@ $species = array(
     <?php if ($page =='index') { ?>
 
         <p class="c-radio-switch">
-            <input id="both-chipped" type="radio" value="all" name="is_chipped" class="c-radio-switch__input  js-field-toggle-trigger"  data-toggle-target="chip-number-wrap" checked>
+            <input id="both-chipped" type="radio" value="all" name="is_chipped" class="c-radio-switch__input  js-field-toggle-trigger"  data-set-target-display="chip-number-wrap, none" checked>
             <label for="both-chipped" class="c-radio-switch__label">All</label>
         </p>
 
     <?php } ?>
 
         <p class="c-radio-switch">
-            <input id="chipped" type="radio" value="true" name="is_chipped" class="c-radio-switch__input  js-field-toggle-trigger"  data-toggle-target="chip-number-wrap" data-toggle-target-visibility="true">
+            <input id="chipped" type="radio" value="true" name="is_chipped" class="c-radio-switch__input  js-field-toggle-trigger"  data-set-target-display="chip-number-wrap, block">
             <label for="chipped" class="c-radio-switch__label">Yes</label>
         </p>
 
         <p class="c-radio-switch">
-            <input id="not-chipped" type="radio" value="false" name="is_chipped" class="c-radio-switch__input  js-field-toggle-trigger"  data-toggle-target="chip-number-wrap">
+            <input id="not-chipped" type="radio" value="false" name="is_chipped" class="c-radio-switch__input  js-field-toggle-trigger"  data-set-target-display="chip-number-wrap, none">
             <label for="not-chipped" class="c-radio-switch__label">No</label>
         </p>
     </div>
 
-    <p id="chip-number-wrap" class="h-spacing h-hide js-field-toggle-target">
+    <p id="chip-number-wrap" style="display: none" class="h-spacing js-field-toggle-target">
         <label for="chip-number">Chip number:</label>
         <input type="text" id="chip-number" name="chip_number" class="c-textual-input">
     </p>

@@ -10,7 +10,7 @@ import nodeListToArray from './nodeListToArray/index';
 import q from './q/index';
 import qa from './qa/index';
 import removeClass from './removeClass/index';
-import setHideShow from './setHideShow/index';
+import setTargetDisplay from './setTargetDisplay/index';
 import show from './show/index';
 
 const V = {
@@ -26,7 +26,7 @@ const V = {
     q,
     qa,
     removeClass,
-    setHideShow,
+    setTargetDisplay,
     show,
 };
 
@@ -43,7 +43,7 @@ export {
     q,
     qa,
     removeClass,
-    setHideShow,
+    setTargetDisplay,
     show,
 };
 

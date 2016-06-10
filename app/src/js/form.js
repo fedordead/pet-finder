@@ -1,11 +1,14 @@
-import { addEventToNodes, id, setHideShow, getFields, klass } from './v/index';
+import { addEventToNodes, id, setTargetDisplay, getFields, klass } from './v/index';
 
-function toggleFieldVisibility(e) {
+function setDisplay(e) {
     // get data attributes
-    const radioToggleTargetElement = id(e.target.dataset.toggleTarget);
-    const radioToggleBoolean = e.target.dataset.toggleTargetVisibility;
+    let str = e.target.dataset.setTargetDisplay;
+    str = str.split(',');
 
-    setHideShow(radioToggleTargetElement, radioToggleBoolean);
+    const target = id(str[0]);
+    const targetDisplayType = str[1];
+
+    setTargetDisplay(target, targetDisplayType);
 }
 
 function updateDateAndLocationText(e) {
@@ -37,12 +40,12 @@ function init(formName = 'report_form') {
     formSetup.lastSeenText = klass('.js-seen-found-text');
 
     addEventToNodes('click', petStatusInput, updateDateAndLocationText);
-    addEventToNodes('click', toggleTriggerFields, toggleFieldVisibility);
+    addEventToNodes('click', toggleTriggerFields, setDisplay);
 }
 
 const formSetup = {
     init,
-    toggleFieldVisibility,
+    setDisplay,
     updateDateAndLocationText,
 };
 
