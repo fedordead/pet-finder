@@ -1,13 +1,13 @@
-import addClass from './addClass';
-import addEventToNodes from './addEventToNodes';
-import getFields from './getFields';
-import id from './id';
-import klass from './klass';
-import nodeListToArray from './nodeListToArray';
-import q from './q';
-import qa from './qa';
-import removeClass from './removeClass';
-import setHideShow from './setHideShow';
+import addClass from './addClass/addClass.js';
+import addEventToNodes from './addEventToNodes/addEventToNodes.js';
+import getFields from './getFields/getFields.js';
+import id from './id/id.js';
+import klass from './klass/klass.js';
+import nodeListToArray from './nodeListToArray/nodeListToArray.js';
+import q from './q/q.js';
+import qa from './qa/qa.js';
+import removeClass from './removeClass/removeClass.js';
+import setHideShow from './setHideShow/setHideShow.js';
 
 
 const V = {
