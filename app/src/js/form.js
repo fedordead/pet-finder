@@ -1,11 +1,11 @@
-import V from './v/index.js';
+import { addEventToNodes, id, setHideShow, getFields, klass } from './v/index.js';
 
 function toggleFieldVisibility(e) {
     // get data attributes
-    const radioToggleTargetElement = V.id(e.target.dataset.toggleTarget);
+    const radioToggleTargetElement = id(e.target.dataset.toggleTarget);
     const radioToggleBoolean = e.target.dataset.toggleTargetVisibility;
 
-    V.setHideShow(radioToggleTargetElement, radioToggleBoolean);
+    setHideShow(radioToggleTargetElement, radioToggleBoolean);
 }
 
 function updateDateAndLocationText(e) {
@@ -32,12 +32,12 @@ function init(formName = 'report_form') {
     const petStatusInput = document[formName].status;
 
     // Grab radio buttons and text nodes
-    const toggleTriggerFields = V.getFields(formName, 'js-field-toggle-trigger');
+    const toggleTriggerFields = getFields(formName, 'js-field-toggle-trigger');
 
-    formSetup.lastSeenText = V.klass('.js-seen-found-text');
+    formSetup.lastSeenText = klass('.js-seen-found-text');
 
-    V.addEventToNodes('click', petStatusInput, updateDateAndLocationText);
-    V.addEventToNodes('click', toggleTriggerFields, toggleFieldVisibility);
+    addEventToNodes('click', petStatusInput, updateDateAndLocationText);
+    addEventToNodes('click', toggleTriggerFields, toggleFieldVisibility);
 }
 
 const formSetup = {
