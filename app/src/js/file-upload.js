@@ -1,4 +1,4 @@
-import { addClass, removeClass, id } from './v/index.js';
+import { addClass, removeClass, id } from './v';
 
 function init() {
     // grab image placeholder and file input

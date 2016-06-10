@@ -1,4 +1,4 @@
-import { addClass, getFields, addEventToNodes, removeClass, setHideShow } from './v/index.js';
+import { addClass, getFields, addEventToNodes, removeClass, setHideShow } from './v';
 
 function clearValidationIndicators(e) {
     removeClass(e.target, 'is-invalid');
