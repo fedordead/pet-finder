@@ -1,10 +1,10 @@
-import V from './v/index.js';
+import { addClass, removeClass, id } from './v/index.js';
 
 function init() {
     // grab image placeholder and file input
-    const imagePreview = V.id('pet_photo');
-    const imageInput = V.id('pet_photo_upload');
-    const spinner = V.id('spinner');
+    const imagePreview = id('pet_photo');
+    const imageInput = id('pet_photo_upload');
+    const spinner = id('spinner');
 
     imageInput.addEventListener('change', () => {
         const file = imageInput.files[0];
@@ -12,11 +12,11 @@ function init() {
         // use FileReader API - IE10+ only
         const reader = new FileReader();
 
-        V.removeClass(spinner, 'h-hide');
+        removeClass(spinner, 'h-hide');
 
         reader.onloadend = () => {
             imagePreview.src = reader.result;
-            V.addClass(spinner, 'h-hide');
+            addClass(spinner, 'h-hide');
         };
 
         if (file) {
@@ -25,7 +25,7 @@ function init() {
             imagePreview.src = '';
         }
 
-        V.removeClass(imagePreview, 'h-hide');
+        removeClass(imagePreview, 'h-hide');
     });
 }
 
