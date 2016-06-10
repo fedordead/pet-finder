@@ -1,12 +1,15 @@
 const setTargetDisplay = (el, displayType) => {
-    console.log(displayType);
+    const element = el;
+
     if (displayType) {
-        el.style.display = displayType.trim();
-    } else if (el.style.display === 'none') {
-        el.style.display = 'block';
+        element.style.display = displayType.trim();
+    } else if (element.style.display === 'none') {
+        element.style.display = 'block';
     } else {
-        el.style.display = 'none';
+        element.style.display = 'none';
     }
+
+    return element;
 };
 
 export default setTargetDisplay;
