@@ -1,24 +1,31 @@
-import { addClass, getFields, addEventToNodes, removeClass, setTargetDisplay } from './v/index';
+import { addClass, qa, addEventToNodes, removeClass, setTargetDisplay } from './v/index';
 
-function clearValidationIndicators(e) {
+const clearValidationIndicators = e => {
     removeClass(e.target, 'is-invalid');
     setTargetDisplay(e.target.nextElementSibling, 'none');
-}
+};
 
-function validateRequired(e) {
+const validateRequired = e => {
     if (e.target.value === '') {
         addClass(e.target, 'is-invalid');
         setTargetDisplay(e.target.nextElementSibling, 'block');
     }
-}
+};
 
-function init(formName = 'report_form') {
-    // Grab required fields
-    const requiredFields = getFields(formName, 'js-required-field');
+const setUpRequiredFields = () => {
+    const requiredFields = qa('[required]');
 
-    // Basic required validation
-    addEventToNodes('blur', requiredFields, validateRequired);
-    addEventToNodes('focus', requiredFields, clearValidationIndicators);
+    if (requiredFields) {
+        // set up event listeners for required fields
+        addEventToNodes('blur', requiredFields, validateRequired);
+        addEventToNodes('focus', requiredFields, clearValidationIndicators);
+    }
+};
+
+
+function init() {
+    // Grab all forms fields
+    setUpRequiredFields();
 }
 
 const validation = {
