@@ -1,5 +1,5 @@
-import addClass from './addClass';
-import removeClass from './removeClass';
+import addClass from '../addClass/addClass';
+import removeClass from '../removeClass/removeClass';
 
 const setHideShow = (el, displayBoolean) => {
     if (displayBoolean) {
