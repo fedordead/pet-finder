@@ -5,7 +5,7 @@
 
         <div class="l-sidebar">
 
-            <form>
+            <form name="report_form">
 
 <?php
     include("partials/pet-details-form.php");
