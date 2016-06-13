@@ -73,9 +73,8 @@
                     <?php } else { ?>
                     <option selected="selected" disabled>Please select</option>
                 <?php } ?>
-
-                <option value="cat">Cat</option>
-                <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="dog">Dog</option>
             </select>
             <svg class="c-form-select__icon">
                 <use xlink:href="#caret-icon" />
@@ -152,24 +151,24 @@
     <?php if ($page =='index') { ?>
 
         <p class="c-radio-switch">
-            <input id="both-chipped" type="radio" value="all" name="is_chipped" class="c-radio-switch__input  js-field-toggle-trigger"  data-toggle-target="chip-number-wrap" checked>
+            <input id="both-chipped" type="radio" value="all" name="is_chipped" class="c-radio-switch__input  js-field-toggle-trigger"  data-set-target-display="chip-number-wrap, none" checked>
             <label for="both-chipped" class="c-radio-switch__label">All</label>
         </p>
 
     <?php } ?>
 
         <p class="c-radio-switch">
-            <input id="chipped" type="radio" value="true" name="is_chipped" class="c-radio-switch__input  js-field-toggle-trigger"  data-toggle-target="chip-number-wrap" data-toggle-target-visibility="true">
+            <input id="chipped" type="radio" value="true" name="is_chipped" class="c-radio-switch__input  js-field-toggle-trigger"  data-set-target-display="chip-number-wrap, block">
             <label for="chipped" class="c-radio-switch__label">Yes</label>
         </p>
 
         <p class="c-radio-switch">
-            <input id="not-chipped" type="radio" value="false" name="is_chipped" class="c-radio-switch__input  js-field-toggle-trigger"  data-toggle-target="chip-number-wrap">
+            <input id="not-chipped" type="radio" value="false" name="is_chipped" class="c-radio-switch__input  js-field-toggle-trigger"  data-set-target-display="chip-number-wrap, none">
             <label for="not-chipped" class="c-radio-switch__label">No</label>
         </p>
     </div>
 
-    <p id="chip-number-wrap" class="h-spacing h-hide js-field-toggle-target">
+    <p id="chip-number-wrap" style="display: none" class="h-spacing js-field-toggle-target">
         <label for="chip-number">Chip number:</label>
         <input type="text" id="chip-number" name="chip_number" class="c-textual-input">
     </p>
@@ -232,14 +231,14 @@
 
     <p class="h-spacing">
         <label for="name" class="is-required">Name: <span class="h-hide-visually">(required)</span></label>
-        <input type="text" id="name" name="name" class="c-textual-input js-required-field">
-        <span class="c-message c-message--error h-hide js-error-message">We're gonna need your name I'm afraid, so people can contact you.</span>
+        <input type="text" id="name" name="name" class="c-textual-input" required>
+        <span class="c-message c-message--error" style="display: none;">We're gonna need your name I'm afraid, so people can contact you.</span>
     </p>
 
     <p class="h-spacing">
         <label for="email" class="is-required">Email: <span class="h-hide-visually">(required)</span></label>
-        <input type="text" id="email" name="email" class="c-textual-input js-required-field">
-        <span class="c-message c-message--error h-hide js-error-message">Hook us up with your email dawg.  Just makes life easier for all parties.</span>
+        <input type="text" id="email" name="email" class="c-textual-input" required>
+        <span class="c-message c-message--error" style="display: none;">Hook us up with your email dawg.  Just makes life easier for all parties.</span>
     </p>
 
     <p>
