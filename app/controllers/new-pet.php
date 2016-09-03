@@ -3,7 +3,7 @@
 __autoload('Posts');
 // New Posts instance
 $Posts = new Posts;
-// Get all posts
+// Submit new post
 $Posts->submit_post();
 
 ?>
