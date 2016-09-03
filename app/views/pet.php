@@ -6,10 +6,9 @@
     <?php
 
     if($pet){
-
     ?>
 
-        <h2 class="heading-headline h-spacing"><?php print_tag($pet->status, 'Lost:'); ?> <?php print_tag($pet->name, 'Catty McCatface'); ?></h2>
+        <h2 class="heading-headline h-spacing"><?php print_tag($pet['status'], 'Lost:'); ?> <?php print_tag($pet['name'], 'Catty McCatface'); ?></h2>
 
         <img class="h-spacing" src="http://placekitten.com/200/300" alt="Place Kitten" />
 
@@ -17,20 +16,20 @@
 
 
 
-                <li>Species: <?php print_tag($pet->species); ?></li>
-                <li>Breed: <?php print_tag($pet->breed); ?></li>
-                <li>Size: <?php print_tag($pet->size); ?></li>
-                <li>Colour: <?php print_tag($pet->colour); ?></li>
+                <li>Species: <?php print_tag($pet['species']); ?></li>
+                <li>Breed: <?php print_tag($pet['breed']); ?></li>
+                <li>Size: <?php print_tag($pet['size']); ?></li>
+                <li>Colour: <?php print_tag($pet['colour']); ?></li>
 
-                <?php if($pet->collar) { ?>
-                    <li>Collar: <?php echo $pet->collar; ?></li>
+                <?php if($pet['collar']) { ?>
+                    <li>Collar: <?php echo $pet['collar']; ?></li>
                 <?php } ?>
-                <?php if($pet->chip_number) { ?>
-                    <li>Chipped: <?php echo $pet->chip_number; ?></li>
+                <?php if($pet['chip_number']) { ?>
+                    <li>Chipped: <?php echo $pet['chip_number']; ?></li>
                 <?php } ?>
 
-                <li>Last seen: <?php print_tag($pet->location); ?></li>
-                <li>At: <?php print_tag(date('m/d/Y h:m', $pet->time)); ?></li>
+                <li>Last seen: <?php print_tag($pet['location']); ?></li>
+                <li>At: <?php print_tag($pet['date_lost']); ?></li>
 
 
 
