@@ -9,11 +9,9 @@
 *
 *
 */
-class Posts
-{
+class Posts {
 
-    function __construct()
-    {
+    function __construct() {
         // Config
         include_once 'core/database.php';
 
@@ -24,15 +22,13 @@ class Posts
             // set the PDO error mode to exception
             $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             }
-        catch(PDOException $e)
-            {
+        catch(PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
             }
     }
 
     // Get All Posts
-    function get_all() 
-    {
+    function get_all() {
          // URL Parameters
         $url_params = $_GET;
 
@@ -93,7 +89,7 @@ class Posts
         }
     }
 
-    function submit_post(){
+    function submit_post() {
         // Get POST parameters
         if(isset($_POST['pet_name'], $_POST['status'], $_POST['species'])){
 
