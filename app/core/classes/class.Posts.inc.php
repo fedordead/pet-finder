@@ -21,8 +21,7 @@ class Posts {
             $this->db = new PDO('mysql:host='.$servername.';dbname='.$dbname, $username, $password);
             // set the PDO error mode to exception
             $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            }
-        catch(PDOException $e) {
+            } catch(PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
             }
     }
@@ -33,17 +32,15 @@ class Posts {
         $url_params = $_GET;
 
         // if URL parameters process query
-        if($url_params){
+        if($url_params) {
             // Empty Search Array
             $search = [];
             // Valid Fields
             $valid = ['name', 'breed', 'colour', 'size', 'species', 'status', 'collar', 'chip_number', 'date_lost', 'location'];
 
-            foreach( $valid as $column )
-            {   
+            foreach( $valid as $column ) {   
                // Check if field is present in URL 
-               if( isset( $_GET[ $column ] ) )
-               {
+               if( isset( $_GET[ $column ] ) ) {
                   // add it to the search array.
                   $search[] = $column . ' = "' . $_GET[ $column ] .'"';
                }
@@ -69,7 +66,7 @@ class Posts {
         // Parse URL
         $url = parseUrl();
         // If ID set
-        if(isset($url[1])){
+        if(isset($url[1])) {
             // Set post ID
             $post_id = $url[1];
             // Set up SQL query with post_id placeholder
@@ -91,7 +88,7 @@ class Posts {
 
     function submit_post() {
         // Get POST parameters
-        if(isset($_POST['pet_name'], $_POST['status'], $_POST['species'])){
+        if(isset($_POST['pet_name'], $_POST['status'], $_POST['species'])) {
 
             $name = trim($_POST['pet_name']);
             $status = trim($_POST['status']);
