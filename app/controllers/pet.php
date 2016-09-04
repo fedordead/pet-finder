@@ -1,6 +1,9 @@
 <?php
-
-// get the post
-$pet = get_single_post();
+// Load class
+__autoload('Posts');
+// New Posts Instance
+$Posts = new Posts;
+// Get Single Post as Pet
+$pet = $Posts->get_single();
 
 ?>

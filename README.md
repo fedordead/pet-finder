@@ -10,9 +10,20 @@ Web app for reporting lost or found pets.
 
 3. `npm start`
 
-4. Have apache server running (MAMP)
+4. On Mac, download and install MAMP.
 
-5. open `index.php` in browser
+5. In your hosts file add the following: `127.0.0.1        petdetectr.local`
+
+6. Visit `phpMyAdmin`
+
+7. Create a new database called `petdetectr`
+
+8. Load in the data dump found in pet detectr Slack channel
+
+9. Run the apache server running (MAMP)
+
+10. Visit [http://petdetectr.local/](http://petdetectr.local) in your browser
+
 
 ## Text editor instructions
 
