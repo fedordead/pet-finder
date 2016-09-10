@@ -9,6 +9,7 @@
 .l-sidebar {
     background-color: $g-color-slate-400;
     color: $shell-g-color-white;
+    display: inline-block;
+    flex: 0 0 rem(300);
     padding: rem($shell-g-spacing-large);
-    width: rem(300);
 }
