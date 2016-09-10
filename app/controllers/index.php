@@ -1,6 +1,9 @@
 <?php
-
-// get the posts
-$posts = get_all_posts();
+// Load class
+__autoload('Posts');
+// New Posts instance
+$Posts = new Posts;
+// Get all posts
+$posts = $Posts->get_all();
 
 ?>
