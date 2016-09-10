@@ -1,23 +1,6 @@
 import { addClass, qa, addEventToNodes, objectKeyValuesToString,
-    removeClass, setTargetDisplay } from './v/index';
+    get, removeClass, setTargetDisplay } from './v/index';
 
-// Get function
-const get = (url, callback) => {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', url);
-    xhr.onload = () => {
-        if (xhr.status === 200) {
-            // Parse the data
-            const data = xhr.responseText;
-
-            // Call success function
-            callback(data);
-        } else {
-            console.log(`Request failed.  Returned status of ${xhr.status}`);
-        }
-    };
-    xhr.send();
-};
 
 const updateResults = () => {
     const params = {};
@@ -32,8 +15,7 @@ const updateResults = () => {
 
         get(`/partials/pet-results-list.php?${query}`,
             data => {
-                const list = document.getElementById('pet-results-list');
-                list.appendChild(data);
+                document.getElementById('pet-results-list').appendChild(data);
             }
         );
     };
