@@ -33,7 +33,7 @@ const updateResults = () => {
         get(`/partials/pet-results-list.php?${query}`,
             data => {
                 const list = document.getElementById('pet-results-list');
-                list.innerHTML = data;
+                list.appendChild(data);
             }
         );
     };
