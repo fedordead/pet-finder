@@ -44,7 +44,7 @@ const setupAjaxers = () => {
     const formFields = qa('select');
     const name = q('#pet-name');
     const handleChange = updateResults();
-    const handleTextChange = debounce(handleChange, 2000);
+    const handleTextChange = debounce(handleChange, 1000);
     name.addEventListener('keyup', handleTextChange);
     addEventToNodes('change', formFields, handleChange);
 };
