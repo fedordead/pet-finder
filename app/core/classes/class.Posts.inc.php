@@ -42,7 +42,7 @@ class Posts {
                // Check if field is present in URL 
                if( isset( $_GET[ $column ] ) ) {
                   // add it to the search array.
-                  $search[] = $column . ' = "' . $_GET[ $column ] .'"';
+                  $search[] = $column . ' LIKE "%' . $_GET[ $column ] .'%"';
                }
             }
             // Implode the array in to query string
