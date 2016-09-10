@@ -13,7 +13,7 @@ class Posts {
 
     function __construct() {
         // Config
-        include_once 'core/database.php';
+        include_once $_SERVER['DOCUMENT_ROOT'].'/core/database.php';
 
         // Connect to Database
         try {
