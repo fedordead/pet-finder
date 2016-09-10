@@ -9,7 +9,11 @@
 /**
  * Settings.
  */
+.l-flex {
+    display: flex;
+}
 
 .l-main {
+    flex: 1;
     padding: rem($shell-g-spacing-large);
 }
