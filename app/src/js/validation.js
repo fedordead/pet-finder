@@ -7,15 +7,13 @@ const updateResults = () => {
     let query = '';
 
     return e => {
-        if (!params[e.target.name]) {
-            query += `${e.target.name}=${e.target.value}`;
-        } else {
-            query = objectKeyValuesToString(params, '=', '&');
-        }
+        params[e.target.name] = e.target.value;
+        query = objectKeyValuesToString(params, '=', '&');
 
         get(`/partials/pet-results-list.php?${query}`,
             data => {
-                document.getElementById('pet-results-list').appendChild(data);
+                const list = document.getElementById('pet-results-list');
+                list.innerHTML = data;
             }
         );
     };
