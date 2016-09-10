@@ -22,27 +22,27 @@ function init() {
     }
     
     // Check controller
-    if(file_exists('controllers/'. $page . '.php')){
-        require_once 'controllers/' .$page. '.php';
+    if(file_exists($_SERVER['DOCUMENT_ROOT'].'/controllers/'. $page . '.php')){
+        require_once $_SERVER['DOCUMENT_ROOT'].'/controllers/' .$page. '.php';
     }
     // include Header
-    include("partials/header.php");
+    include($_SERVER['DOCUMENT_ROOT']."/partials/header.php");
 
     // Require View
-    if(file_exists('views/'. $page . '.php')){
-        require_once 'views/' . $page . '.php';
+    if(file_exists($_SERVER['DOCUMENT_ROOT'].'/views/'. $page . '.php')){
+        require_once $_SERVER['DOCUMENT_ROOT'].'/views/' . $page . '.php';
     } else {
-        require_once 'views/404.php';
+        require_once $_SERVER['DOCUMENT_ROOT'].'/views/404.php';
     }
 
-    include("partials/footer.php");
+    include($_SERVER['DOCUMENT_ROOT']."/partials/footer.php");
 }
 
 /* ###### Helper Functions ###### */
 
 // Autoload Class
 function __autoload($class_name) {
-      include_once 'core/classes/class.' . $class_name . '.inc.php';
+      include_once $_SERVER['DOCUMENT_ROOT'].'/core/classes/class.' . $class_name . '.inc.php';
 }
 
 // Print out variable if it exists, replace with default if not
