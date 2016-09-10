@@ -1,14 +1,14 @@
-import { addClass, qa, addEventToNodes, objectKeyValuesToString,
+import { addClass, q, qa, addEventToNodes, objectKeyValuesToString,
     get, removeClass, setTargetDisplay } from './v/index';
 
 
 const updateResults = () => {
     const params = {};
-    let query = '';
 
     return e => {
+        console.log(e);
         params[e.target.name] = e.target.value;
-        query = objectKeyValuesToString(params, '=', '&');
+        const query = objectKeyValuesToString(params, '=', '&');
 
         get(`/partials/pet-results-list.php?${query}`,
             data => {
@@ -19,10 +19,36 @@ const updateResults = () => {
     };
 };
 
+// adapted from _.underscore
+const debounce = (func, wait, immediate) => {
+    let timeout;
+
+    return () => {
+        console.log(...arguments);
+        const later = () => {
+            timeout = null;
+            if (!immediate) {
+                func(...arguments);
+            }
+        };
+
+        const callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+
+        if (callNow) {
+            func(...arguments);
+        }
+    };
+};
+
 const setupAjaxers = () => {
-    const selects = qa('select');
+    const formFields = qa('select');
+    const name = q('#pet-name');
     const handleChange = updateResults();
-    addEventToNodes('change', selects, handleChange);
+    const handleTextChange = debounce(e => handleChange(e), 2000);
+    name.addEventListener('keyup', handleTextChange, true);
+    addEventToNodes('change', formFields, handleChange);
 };
 
 const clearValidationIndicators = e => {
