@@ -38,7 +38,7 @@ const debounce = (func, wait, immediate) => {
             func(...params);
         }
     };
-}
+};
 
 const setupAjaxers = () => {
     const formFields = qa('select');
