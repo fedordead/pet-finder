@@ -4,19 +4,6 @@ import { addEventToNodes, id, setTargetDisplay, getFields, klass } from './v/ind
 * Form Controller
 */
 
-// Initialise a form
-function init(formName = 'report_form') {
-    // Return if no form on page
-    if (document[formName] === undefined) { return; }
-
-    // Get interactive elements
-    const petStatusEl = document[formName].status;
-    const toggleEls = getFields(formName, 'js-field-toggle-trigger');
-
-    // Attach event listeners
-    addEventToNodes('click', petStatusEl, updatePetStatus);
-    addEventToNodes('click', toggleEls, showHideFields);
-}
 
 // Show/hide form fields depending on toggle
 function showHideFields(e) {
@@ -46,6 +33,20 @@ function updatePetStatus(e) {
     for (let i = 0, max = lastSeenTextElements.length; i < max; i++) {
         lastSeenTextElements[i].innerHTML = lastSeenValue;
     }
+}
+
+// Initialise a form
+function init(formName = 'report_form') {
+    // Return if no form on page
+    if (document[formName] === undefined) { return; }
+
+    // Get interactive elements
+    const petStatusEl = document[formName].status;
+    const toggleEls = getFields(formName, 'js-field-toggle-trigger');
+
+    // Attach event listeners
+    addEventToNodes('click', petStatusEl, updatePetStatus);
+    addEventToNodes('click', toggleEls, showHideFields);
 }
 
 const formCtrl = {
