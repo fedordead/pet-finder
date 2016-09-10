@@ -5,7 +5,7 @@
 
         <div class="l-sidebar">
 
-            <form name="report_form">
+            <form id="report_form" name="report_form">
 
 <?php
     include("partials/pet-details-form.php");
@@ -25,7 +25,7 @@
             <ul id="pet-results-list" class="l-grid">
 
 <?php
-    include("partials/pet-results-list.php");
+    include($_SERVER['DOCUMENT_ROOT']."/partials/pet-results-list.php");
 ?>
 
             </ul>
