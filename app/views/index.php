@@ -22,24 +22,12 @@
 
             <h2 class="heading-headline h-spacing">Pets</h2>
 
-            <ul class="l-grid">
+            <ul id="pet-results-list" class="l-grid">
 
-            <?php
+<?php
+    include("partials/pet-results-list.php");
+?>
 
-                if($posts){
-
-                    foreach ($posts as $key => $post) {
-            ?>
-                <li class="l-grid__item l-grid__item--4-col">
-
-                <?php include("partials/card.php"); ?>
-
-                </li>
-
-            <?php
-                    }
-                }
-            ?>
             </ul>
 
         </main>
