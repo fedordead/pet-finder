@@ -1,4 +1,5 @@
-import { addClass, qa, addEventToNodes, removeClass, setTargetDisplay } from './v/index';
+import { addClass, qa, addEventToNodes, objectKeyValuesToString,
+    removeClass, setTargetDisplay } from './v/index';
 
 // Get function
 const get = (url, callback) => {
@@ -20,15 +21,14 @@ const get = (url, callback) => {
 
 const updateResults = () => {
     const params = {};
+    let query = '';
 
     return e => {
-        let query = '';
-
-        params[e.target.name] = e.target.value;
-
-        Object.keys(params).forEach(key => {
-            query += `${key}=${params[key]}&`;
-        });
+        if (!params[e.target.name]) {
+            query += `${e.target.name}=${e.target.value}`;
+        } else {
+            query = objectKeyValuesToString(params, '=', '&');
+        }
 
         get(`/partials/pet-results-list.php?${query}`,
             data => {
