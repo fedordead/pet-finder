@@ -1,6 +1,7 @@
 import addClass from './addClass/index';
 import addEventToNodes from './addEventToNodes/index';
 import checkSupport from './checkSupport/index';
+import debounce from './debounce/index';
 import defaults from './defaults/index';
 import each from './each/index';
 import getFields from './getFields/index';
@@ -20,6 +21,7 @@ const V = {
     addClass,
     addEventToNodes,
     checkSupport,
+    debounce,
     defaults,
     each,
     get,
@@ -40,6 +42,7 @@ export {
     addClass,
     addEventToNodes,
     checkSupport,
+    debounce,
     defaults,
     each,
     get,
