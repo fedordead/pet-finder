@@ -36,7 +36,7 @@
 
     <p class="h-spacing">
         <label for="pet-name">Pet's name:</label>
-        <input type="text" id="pet-name" name="pet_name" class="c-textual-input">
+        <input type="text" id="pet-name" name="name" class="c-textual-input">
     </p>
 
     <?php if ($page != 'index') { ?>
@@ -231,7 +231,7 @@
 
     <p class="h-spacing">
         <label for="name" class="is-required">Name: <span class="h-hide-visually">(required)</span></label>
-        <input type="text" id="name" name="name" class="c-textual-input" required>
+        <input type="text" id="name" name="user_name" class="c-textual-input" required>
         <span class="c-message c-message--error" style="display: none;">We're gonna need your name I'm afraid, so people can contact you.</span>
     </p>
 

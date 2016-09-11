@@ -1,5 +1,6 @@
 import { addClass, qa, addEventToNodes, removeClass, setTargetDisplay } from './v/index';
 
+
 const clearValidationIndicators = e => {
     removeClass(e.target, 'is-invalid');
     setTargetDisplay(e.target.nextElementSibling, 'none');
