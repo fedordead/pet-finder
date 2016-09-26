@@ -123,7 +123,7 @@ class Posts {
 
         }
         // Redirect to home
-        header('Location_id: index.php');
+        header('Location: index.php');
     }
 }
 ?>
