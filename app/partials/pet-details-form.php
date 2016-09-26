@@ -23,7 +23,7 @@
         <div class="c-radio-switch-container h-spacing">
 
             <p class="c-radio-switch">
-                <input id="lost-found" type="radio" value="all" name="status" class="c-radio-switch__input" checked>
+                <input id="lost-found" type="radio" value="" name="status" class="c-radio-switch__input" checked>
                 <label for="lost-found" class="c-radio-switch__label">All</label>
             </p>
 
@@ -82,7 +82,7 @@
             <select id="species" class="c-form-select__select" name="species_id">
 
                 <?php if ($page =='index') { ?>
-                    <option value="all">Show all</option>
+                    <option value="">Show all</option>
                     <?php } else { ?>
                     <option selected="selected" disabled>Please select</option>
                 <?php } ?>
@@ -111,7 +111,7 @@
             <select id="breed" class="c-form-select__select" name="breed_id">
 
                 <?php if ($page =='index') { ?>
-                    <option value="all">Show all</option>
+                    <option value="">Show all</option>
                     <?php } else { ?>
                     <option selected="selected" disabled>Please select</option>
                 <?php } ?>
@@ -140,7 +140,7 @@
             <select id="size" class="c-form-select__select" name="size_id">
 
                 <?php if ($page =='index') { ?>
-                    <option value="all">Show all</option>
+                    <option value="">Show all</option>
                     <?php } else { ?>
                     <option selected="selected" disabled>Please select</option>
                 <?php } ?>
@@ -170,7 +170,7 @@
             <select id="colour" class="c-form-select__select" name="colour_id">
 
                 <?php if ($page =='index') { ?>
-                    <option value="all">Show all</option>
+                    <option value="">Show all</option>
                     <?php } else { ?>
                     <option selected="selected" disabled>Please select</option>
                 <?php } ?>
@@ -201,7 +201,7 @@
     <?php if ($page =='index') { ?>
 
         <p class="c-radio-switch">
-            <input id="both-chipped" type="radio" value="all" name="is_chipped" class="c-radio-switch__input  js-field-toggle-trigger"  data-set-target-display="chip-number-wrap, none" checked>
+            <input id="both-chipped" type="radio" value="" name="is_chipped" class="c-radio-switch__input  js-field-toggle-trigger"  data-set-target-display="chip-number-wrap, none" checked>
             <label for="both-chipped" class="c-radio-switch__label">All</label>
         </p>
 
@@ -229,7 +229,7 @@
             <select id="collar" class="c-form-select__select" name="collar_id">
 
                 <?php if ($page =='index') { ?>
-                    <option value="all">Show all</option>
+                    <option value="">Show all</option>
                     <?php } else { ?>
                     <option selected="selected" disabled>Please select</option>
                 <?php } ?>
@@ -264,7 +264,7 @@
             <select id="location" class="c-form-select__select" name="location_id">
 
                 <?php if ($page =='index') { ?>
-                    <option value="all">Show all</option>
+                    <option value="">Show all</option>
                     <?php } else { ?>
                     <option selected="selected" disabled>Please select</option>
                 <?php } ?>
