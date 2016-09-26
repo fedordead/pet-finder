@@ -46,10 +46,10 @@ class Posts {
                }
             }
             // Implode the array in to query string
-            $sql = 'SELECT id, name, breed_id, colour_id, size_id, species_id, status_id, collar_id, chip_number, date_lost, location_id FROM pets WHERE ' . implode( ' AND ', $search );
+            $sql = 'SELECT * FROM pets WHERE ' . implode( ' AND ', $search );
         } else {
             // If no query parameters, return all posts
-            $sql = 'SELECT id, name, breed_id, colour_id, size_id, species_id, status_id, collar_id, chip_number, date_lost, location_id FROM pets';
+            $sql = 'SELECT * FROM pets';
         }
         // Prepare Data
         $itemsQuery = $this->db->prepare($sql);
@@ -70,7 +70,7 @@ class Posts {
             // Set post ID
             $post_id = $url[1];
             // Set up SQL query with post_id placeholder
-            $sql = "SELECT id, name, breed_id, colour_id, size_id, species_id, status_id, collar_id, chip_number, date_lost, location_id
+            $sql = "SELECT *
                 FROM pets
                 WHERE id = :post_id";
             // Prepare data
