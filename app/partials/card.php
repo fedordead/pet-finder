@@ -7,20 +7,20 @@
 
     <div class="c-card__body">
         <ul>
-            <li>Species: <?php print_tag($post['species']); ?></li>
-            <li>Breed: <?php print_tag($post['breed']); ?></li>
-            <li>Size: <?php print_tag($post['size']); ?></li>
-            <li>Colour: <?php print_tag($post['colour']); ?></li>
+            <li>Species: <?php print_tag($post['species_id']); ?></li>
+            <li>Breed: <?php print_tag($post['breed_id']); ?></li>
+            <li>Size: <?php print_tag($post['size_id']); ?></li>
+            <li>Colour: <?php print_tag($post['colour_id']); ?></li>
 
-            <?php if($post['collar']) { ?>
-                <li>Collar: <?php echo $post['collar']; ?></li>
+            <?php if($post['collar_id']) { ?>
+                <li>Collar: <?php echo $post['collar_id']; ?></li>
             <?php } ?>
 
             <?php if($post['chip_number']) { ?>
                 <li>Chipped: <?php echo $post['chip_number']; ?></li>
             <?php } ?>
 
-            <li>Last seen: <?php print_tag($post['location']); ?></li>
+            <li>Last seen: <?php print_tag($post['location_id']); ?></li>
             <li>At: <?php print_tag($post['date_lost']); ?></li>
         </ul>
     </div>
