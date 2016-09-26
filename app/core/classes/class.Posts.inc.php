@@ -100,10 +100,10 @@ class Posts {
 
     function submit_post() {
         // Get POST parameters
-        if(isset($_POST['pet_name'], $_POST['status_id'], $_POST['species_id'])) {
+        if(isset($_POST['name'], $_POST['status'], $_POST['species_id'])) {
 
-            $name = trim($_POST['pet_name']);
-            $status_id = trim($_POST['status_id']);
+            $name = trim($_POST['name']);
+            $status_id = trim($_POST['status']);
             $species_id = trim($_POST['species_id']);
             $breed_id = trim($_POST['breed_id']);
             $collar_id = trim($_POST['collar_id']);
