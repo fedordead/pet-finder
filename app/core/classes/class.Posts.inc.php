@@ -31,6 +31,21 @@ class Posts {
          // URL Parameters
         $url_params = $_GET;
 
+        $sql = 'SELECT p.name, p.chip_number, p.lost_date,
+                    (SELECT name FROM LU_species
+                     where p.species_id = id) as species_id,
+                     (SELECT name FROM LU_breeds
+                     where p.breed_id = id) as breed_id,
+                     (SELECT name FROM LU_sizes
+                     where p.size_id = id) as size_id,
+                     (SELECT name FROM LU_colours
+                     where p.colour_id = id) as colour_id,
+                     (SELECT name FROM LU_collars
+                     where p.collar_id = id) as collar_id,
+                     (SELECT name FROM LU_locations
+                     where p.location_id = id) as location_id
+                    FROM pets p';
+
         // if URL parameters process query
         if($url_params) {
             // Empty Search Array
@@ -46,10 +61,7 @@ class Posts {
                }
             }
             // Implode the array in to query string
-            $sql = 'SELECT * FROM pets WHERE ' . implode( ' AND ', $search );
-        } else {
-            // If no query parameters, return all posts
-            $sql = 'SELECT * FROM pets';
+            $sql = $sql . ' WHERE ' . implode( ' AND ', $search );
         }
         // Prepare Data
         $itemsQuery = $this->db->prepare($sql);
