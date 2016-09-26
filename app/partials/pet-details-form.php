@@ -28,12 +28,12 @@
             </p>
 
             <p class="c-radio-switch">
-                <input id="lost" type="radio" value="Lost" name="status" class="c-radio-switch__input">
+                <input id="lost" type="radio" value="1" name="status" class="c-radio-switch__input">
                 <label for="lost" class="c-radio-switch__label">Lost</label>
             </p>
 
             <p class="c-radio-switch">
-                <input id="found" type="radio" value="Found" name="status" class="c-radio-switch__input">
+                <input id="found" type="radio" value="2" name="status" class="c-radio-switch__input">
                 <label for="found" class="c-radio-switch__label">Found</label>
             </p>
 
@@ -42,8 +42,11 @@
 
     <?php } ?>
 
-    <?php if ($page == 'lost' || $page == 'found') { ?>
-        <input type="hidden" name="status" value="<?php echo ucwords($page) ?>">
+    <?php if ($page == 'lost') { ?>
+        <input type="hidden" name="status" value="<?php echo '1' ?>">
+    <?php } ?>
+    <?php if ($page == 'found') { ?>
+        <input type="hidden" name="status" value="<?php echo '2' ?>">
     <?php } ?>
 
 
