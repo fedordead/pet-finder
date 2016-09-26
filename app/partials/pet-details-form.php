@@ -1,3 +1,16 @@
+<?php
+    include $_SERVER['DOCUMENT_ROOT'].'/core/database.php';
+
+    // Connect to Database
+    try {
+        // Store database as db property of class
+        $conn = new PDO('mysql:host='.$servername.';dbname='.$dbname, $username, $password);
+        // set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch(PDOException $e) {
+        echo 'Connection failed: ' . $e->getMessage();
+    }
+?>
 <fieldset <?php if ($page != 'index') { echo 'class="h-spacing-large"'; } ?>>
 
     <legend class="h-spacing-small"><?php if ($page == 'index') { echo 'Filters'; } else { echo 'Pet details'; } ?></legend>
@@ -66,15 +79,25 @@
     <p class="h-spacing">
         <label for="species">Species:</label>
         <span class="c-form-select">
-            <select id="species" class="c-form-select__select" name="species">
+            <select id="species" class="c-form-select__select" name="species_id">
 
                 <?php if ($page =='index') { ?>
                     <option value="all">Show all</option>
                     <?php } else { ?>
                     <option selected="selected" disabled>Please select</option>
                 <?php } ?>
-                    <option value="cat">Cat</option>
-                    <option value="dog">Dog</option>
+                <?php
+                    $stmt = $conn->prepare('SELECT * FROM LU_species ORDER BY name');
+                    $stmt->execute();
+                    // If data, assign it to $items, otherwise empty array
+                    $items = $stmt->rowCount() ? $stmt : [];
+
+                    foreach ($items as $item) {
+                ?>
+                    <option value="<?php echo $item['id'] ?>"><?php echo $item['name'] ?></option>
+                <?php
+                    }
+                ?>
             </select>
             <svg class="c-form-select__icon">
                 <use xlink:href="#caret-icon" />
@@ -85,16 +108,25 @@
     <p class="h-spacing">
         <label for="breed">Breed:</label>
         <span class="c-form-select">
-            <select id="breed" class="c-form-select__select" name="breed">
+            <select id="breed" class="c-form-select__select" name="breed_id">
 
                 <?php if ($page =='index') { ?>
                     <option value="all">Show all</option>
                     <?php } else { ?>
                     <option selected="selected" disabled>Please select</option>
                 <?php } ?>
+                <?php
+                    $stmt = $conn->prepare('SELECT * FROM LU_breeds ORDER BY name');
+                    $stmt->execute();
+                    // If data, assign it to $items, otherwise empty array
+                    $items = $stmt->rowCount() ? $stmt : [];
 
-                <option value="alsation">Alsation</option>
-                <option value="yorkshire-terrier">Yorkshire Terrier</option>
+                    foreach ($items as $item) {
+                ?>
+                    <option value="<?php echo $item['id'] ?>"><?php echo $item['name'] ?></option>
+                <?php
+                    }
+                ?>
             </select>
             <svg class="c-form-select__icon">
                 <use xlink:href="#caret-icon" />
@@ -105,7 +137,7 @@
     <p class="h-spacing">
         <label for="size">Size:</label>
         <span class="c-form-select">
-            <select id="size" class="c-form-select__select" name="size">
+            <select id="size" class="c-form-select__select" name="size_id">
 
                 <?php if ($page =='index') { ?>
                     <option value="all">Show all</option>
@@ -113,9 +145,18 @@
                     <option selected="selected" disabled>Please select</option>
                 <?php } ?>
 
-                <option value="small">Small</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
+                <?php
+                    $stmt = $conn->prepare('SELECT * FROM LU_sizes ORDER BY name');
+                    $stmt->execute();
+                    // If data, assign it to $items, otherwise empty array
+                    $items = $stmt->rowCount() ? $stmt : [];
+
+                    foreach ($items as $item) {
+                ?>
+                    <option value="<?php echo $item['id'] ?>"><?php echo $item['name'] ?></option>
+                <?php
+                    }
+                ?>
             </select>
             <svg class="c-form-select__icon">
                 <use xlink:href="#caret-icon" />
@@ -126,7 +167,7 @@
     <p class="h-spacing">
         <label for="colour">Colour:</label>
         <span class="c-form-select">
-            <select id="colour" class="c-form-select__select" name="colour">
+            <select id="colour" class="c-form-select__select" name="colour_id">
 
                 <?php if ($page =='index') { ?>
                     <option value="all">Show all</option>
@@ -134,9 +175,18 @@
                     <option selected="selected" disabled>Please select</option>
                 <?php } ?>
 
-                <option value="black">Black</option>
-                <option value="ginger">Ginger</option>
-                <option value="grey">Grey</option>
+                <?php
+                    $stmt = $conn->prepare('SELECT * FROM LU_colours ORDER BY name');
+                    $stmt->execute();
+                    // If data, assign it to $items, otherwise empty array
+                    $items = $stmt->rowCount() ? $stmt : [];
+
+                    foreach ($items as $item) {
+                ?>
+                    <option value="<?php echo $item['id'] ?>"><?php echo $item['name'] ?></option>
+                <?php
+                    }
+                ?>
             </select>
             <svg class="c-form-select__icon">
                 <use xlink:href="#caret-icon" />
@@ -176,7 +226,7 @@
     <p class="h-spacing">
         <label for="collar">Collar:</label>
         <span class="c-form-select">
-            <select id="collar" class="c-form-select__select" name="collar">
+            <select id="collar" class="c-form-select__select" name="collar_id">
 
                 <?php if ($page =='index') { ?>
                     <option value="all">Show all</option>
@@ -184,9 +234,18 @@
                     <option selected="selected" disabled>Please select</option>
                 <?php } ?>
 
-                <option value="none">None</option>
-                <option value="green">Green</option>
-                <option value="yellow">Yellow</option>
+                <?php
+                    $stmt = $conn->prepare('SELECT * FROM LU_collars ORDER BY name');
+                    $stmt->execute();
+                    // If data, assign it to $items, otherwise empty array
+                    $items = $stmt->rowCount() ? $stmt : [];
+
+                    foreach ($items as $item) {
+                ?>
+                    <option value="<?php echo $item['id'] ?>"><?php echo $item['name'] ?></option>
+                <?php
+                    }
+                ?>
             </select>
             <svg class="c-form-select__icon">
                 <use xlink:href="#caret-icon" />
@@ -202,8 +261,7 @@
     <p class="h-spacing">
         <label for="location">Location <span class="js-seen-found-text">last seen</span>:</label>
         <span class="c-form-select">
-            <select id="location" class="c-form-select__select" name=
-            "location">
+            <select id="location" class="c-form-select__select" name="location_id">
 
                 <?php if ($page =='index') { ?>
                     <option value="all">Show all</option>
@@ -211,9 +269,18 @@
                     <option selected="selected" disabled>Please select</option>
                 <?php } ?>
 
-                <option value="walton">Walton-on-Thames</option>
-                <option value="staines">Westside Staines Massive</option>
-                <option value="oz">Australia</option>
+                <?php
+                    $stmt = $conn->prepare('SELECT * FROM LU_locations ORDER BY name');
+                    $stmt->execute();
+                    // If data, assign it to $items, otherwise empty array
+                    $items = $stmt->rowCount() ? $stmt : [];
+
+                    foreach ($items as $item) {
+                ?>
+                    <option value="<?php echo $item['id'] ?>"><?php echo $item['name'] ?></option>
+                <?php
+                    }
+                ?>
             </select>
             <svg class="c-form-select__icon">
                 <use xlink:href="#caret-icon" />
