@@ -31,19 +31,19 @@ class Posts {
          // URL Parameters
         $url_params = $_GET;
 
-        $sql = 'SELECT p.name, p.chip_number, p.lost_date,
+        $sql = 'SELECT p.id, p.name, p.chip_number, p.lost_date,
                     (SELECT name FROM LU_species
-                     where p.species_id = id) as species_id,
-                     (SELECT name FROM LU_breeds
-                     where p.breed_id = id) as breed_id,
-                     (SELECT name FROM LU_sizes
-                     where p.size_id = id) as size_id,
-                     (SELECT name FROM LU_colours
-                     where p.colour_id = id) as colour_id,
-                     (SELECT name FROM LU_collars
-                     where p.collar_id = id) as collar_id,
-                     (SELECT name FROM LU_locations
-                     where p.location_id = id) as location_id
+                        where p.species_id = id) as species_id,
+                    (SELECT name FROM LU_breeds
+                        where p.breed_id = id) as breed_id,
+                    (SELECT name FROM LU_sizes
+                        where p.size_id = id) as size_id,
+                    (SELECT name FROM LU_colours
+                        where p.colour_id = id) as colour_id,
+                    (SELECT name FROM LU_collars
+                        where p.collar_id = id) as collar_id,
+                    (SELECT name FROM LU_locations
+                        where p.location_id = id) as location_id
                     FROM pets p';
 
         // if URL parameters process query
@@ -93,6 +93,7 @@ class Posts {
             );
             // Fetch single line
             $post = $itemsQuery->fetch();
+            $post['id'] = $post_id;
             // Return post
             return $post;
         }

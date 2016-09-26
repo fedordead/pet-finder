@@ -1,6 +1,5 @@
 
 <a class="c-card" href="/pet/<?php echo $post['id']; ?>">
-
     <div class="c-card__header">
         <h3 class="heading-headline"><?php print_tag($post['name'], 'Pet Name'); ?></h3>
     </div>
@@ -38,4 +37,3 @@
     </div>
     <?php } ?>
 </a>
-
